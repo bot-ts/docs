@@ -79,9 +79,101 @@ module.exports = command
 The `\n` character **is not a valid argument separator**. If you want to break the line before putting an argument, add a space at the start of argument. \(_future issue url here_\)
 {% endhint %}
 
-### Options
+{% hint style="info" %}
+The `name` and `description` argument properties are obligatory.
+{% endhint %}
 
-### Positional
+### Argument types
 
-### Flags
+There are three specific types of arguments based on the [Yargs](http://yargs.js.org/) parser, here is a short overview.
+
+{% tabs %}
+{% tab title="Positional" %}
+The most common type of argument on Discord bots. It is used to define values according to their positioning in the command typed.
+
+```typescript
+import * as app from "../app"
+
+const command: app.Command = {
+  name: "cmd"
+  positional: [
+    {
+      name: "name",
+      description: "A name positional"
+    }
+  ]
+
+  // ...some properties
+}
+
+module.exports = command
+```
+
+The last code example will be used like that on Discord:
+
+* `!cmd "multiline value"`
+* `!cmd value`
+{% endtab %}
+
+{% tab title="Option" %}
+This kind of argument is used for options, most often optional.
+
+```typescript
+import * as app from "../app"
+
+const command: app.Command = {
+  name: "cmd"
+  options: [
+    {
+      name: "name",
+      description: "A name option"
+    }
+  ]
+  async run(message) {
+    app.log(message.args.name) // value
+  }
+}
+
+module.exports = command
+```
+
+The last code example will be used like that on Discord:
+
+* `!cmd --name "multiline value"`
+* `!cmd --name value`
+{% endtab %}
+
+{% tab title="Flag" %}
+The flag is an argument of type "present or not" which returns a boolean. You can also assign it values such as `on/off` or `1/0` or `true/false` or `Y/N`, it will always return a boolean.
+
+```typescript
+import * as app from "../app"
+
+const command: app.Command = {
+  name: "cmd"
+  flags: [
+    {
+      name: "named",
+      flag: "n",
+      description: "Is named flag"
+    }
+  ]
+  async run(message) {
+    app.log(message.args.named) // true | false
+  }
+}
+
+module.exports = command
+```
+
+The last code example will be used like that on Discord:
+
+| Command | Returning value |
+| :--- | :--- |
+| `!cmd --named off` | `false` |
+| `!cmd --named` | `true` |
+| `!cmd -n` | `true` |
+| `!cmd` | `false` |
+{% endtab %}
+{% endtabs %}
 
