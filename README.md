@@ -2,25 +2,15 @@
 description: Welcome to the bot.ts official documentation.
 ---
 
+![](.gitbook/assets/bot.ts-banner.png)
+
 <div align="center">
-  <div>
-    <a href="https://ghom.gitbook.io/bot-ts/">
-      <img src=".gitbook/assets/bot.ts-banner.png"/>
-    </a>
-  </div>
-  <br/>
-  <div>
-    <a href="https://discord.gg/3vC2XWK"><img src="https://img.shields.io/discord/507389389098188820?color=7289da&logo=discord&logoColor=white" alt="Discord server" /></a>
+  <a href="https://discord.gg/3vC2XWK"><img src="https://img.shields.io/discord/507389389098188820?color=7289da&logo=discord&logoColor=white" alt="Discord server" /></a>
     <a href="https://www.npmjs.com/package/make-bot.ts"><img src="https://img.shields.io/npm/v/make-bot.ts.svg?maxAge=3600" alt="CLI version" /></a>
     <a href="https://www.npmjs.com/package/make-bot.ts"><img src="https://img.shields.io/npm/dt/make-bot.ts.svg?maxAge=3600" alt="CLI downloads" /></a>
     <a href="https://github.com/CamilleAbella/bot.ts/actions/workflows/test.yml"><img src="https://github.com/CamilleAbella/bot.ts/actions/workflows/test.yml/badge.svg" alt="Build status" /></a>
     <a href="https://david-dm.org/CamilleAbella/bot.ts"><img src="https://img.shields.io/david/camilleabella/bot.ts" alt="Dependencies" /></a>
-  </div>
 </div>
-
-<br/>
-
-# Introduction
 
 ## What is bot.ts ?
 
