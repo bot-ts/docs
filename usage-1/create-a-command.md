@@ -95,15 +95,17 @@ The most common type of argument on Discord bots. It is used to define values ac
 import * as app from "../app"
 
 const command: app.Command = {
-  name: "cmd"
+  name: "cmd",
+  description: "A command",
   positional: [
     {
       name: "name",
       description: "A name positional"
     }
-  ]
-
-  // ...some properties
+  ],
+  async run(message) {
+    app.log(message.args.name) // string | null
+  }
 }
 
 module.exports = command
@@ -122,15 +124,16 @@ This kind of argument is used for options, most often optional.
 import * as app from "../app"
 
 const command: app.Command = {
-  name: "cmd"
+  name: "cmd",
+  description: "A command",
   options: [
     {
       name: "name",
       description: "A name option"
     }
-  ]
+  ],
   async run(message) {
-    app.log(message.args.name) // value
+    app.log(message.args.name) // string | null
   }
 }
 
@@ -150,14 +153,15 @@ The flag is an argument of type "present or not" which returns a boolean. You ca
 import * as app from "../app"
 
 const command: app.Command = {
-  name: "cmd"
+  name: "cmd",
+  description: "A command",
   flags: [
     {
       name: "named",
       flag: "n",
       description: "Is named flag"
     }
-  ]
+  ],
   async run(message) {
     app.log(message.args.named) // true | false
   }
@@ -176,4 +180,8 @@ The last code example will be used like that on Discord:
 | `!cmd` | `false` |
 {% endtab %}
 {% endtabs %}
+
+### Required
+
+If argument is required, it will never have the `null` value and will return an error message before the execution of the command if it is missing. The command will then not be executed.
 
