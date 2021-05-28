@@ -31,46 +31,6 @@ Then, the `src/commands/ping.ts` file will be ready to be implemented.
 
 ## Define message origin
 
-Once your command is created, **If you want handle messages from GuildChannels only or from DMChannel only**, follow these steps.
-
-{% tabs %}
-{% tab title="GuildChannel only" %}
-* Add `app.GuildMessage` generic to command type \(line: 3\)
-* Add the `guildChannelOnly` flag setted to `true` \(line: 5\)
-
-```typescript
-import * as app from "../app"
-
-const command: app.Command<app.GuildMessage> = {
-
-  guildChannelOnly: true,
-
-  // ...some properties
-}
-
-module.exports = command
-```
-{% endtab %}
-
-{% tab title="DMChannel only" %}
-* Add `app.DirectMessage` generic to command type \(line: 3\)
-* Add the `dmChannelOnly` flag setted to `true` \(line: 5\)
-
-```typescript
-import * as app from "../app"
-
-const command: app.Command<app.DirectMessage> = {
-
-  dmChannelOnly: true,
-
-  // ...some properties
-}
-
-module.exports = command
-```
-{% endtab %}
-{% endtabs %}
-
 ## Setup a cooldown
 
 ## Arguments
@@ -94,9 +54,10 @@ The most common type of argument on Discord bots. It is used to define values ac
 ```typescript
 import * as app from "../app"
 
-const command: app.Command = {
+module.exports = new app.Command({
   name: "cmd",
   description: "A command",
+  channelType: "all",
   positional: [
     {
       name: "name",
@@ -106,9 +67,7 @@ const command: app.Command = {
   async run(message) {
     app.log(message.args.name) // string | null
   }
-}
-
-module.exports = command
+})
 ```
 
 The last code example will be used like that on Discord:
@@ -123,9 +82,10 @@ This kind of argument is used for options, most often optional.
 ```typescript
 import * as app from "../app"
 
-const command: app.Command = {
+module.exports = new app.Command({
   name: "cmd",
   description: "A command",
+  channelType: "all",
   options: [
     {
       name: "name",
@@ -135,9 +95,7 @@ const command: app.Command = {
   async run(message) {
     app.log(message.args.name) // string | null
   }
-}
-
-module.exports = command
+})
 ```
 
 The last code example will be used like that on Discord:
@@ -152,9 +110,10 @@ The flag is an argument of type "present or not" which returns a boolean. You ca
 ```typescript
 import * as app from "../app"
 
-const command: app.Command = {
+module.exports = new app.Command({
   name: "cmd",
   description: "A command",
+  channelType: "all",
   flags: [
     {
       name: "named",
@@ -165,9 +124,7 @@ const command: app.Command = {
   async run(message) {
     app.log(message.args.named) // true | false
   }
-}
-
-module.exports = command
+})
 ```
 
 The last code example will be used like that on Discord:
