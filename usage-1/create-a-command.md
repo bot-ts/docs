@@ -31,6 +31,7 @@ Then, the `src/commands/ping.ts` file will be ready to be implemented.
 
 ## Define message origin
 
+<<<<<<< HEAD
 Once your command is created, **If you want handle messages from GuildChannels only or from DMChannel only**, follow these steps.
 
 {% tabs %}
@@ -71,6 +72,8 @@ export default command
 {% endtab %}
 {% endtabs %}
 
+=======
+>>>>>>> d09e148b13d4ceb0faf566241de7b10f8398d20c
 ## Setup a cooldown
 
 ## Arguments
@@ -94,9 +97,10 @@ The most common type of argument on Discord bots. It is used to define values ac
 ```typescript
 import * as app from "../app"
 
-const command: app.Command = {
+export default new app.Command({
   name: "cmd",
   description: "A command",
+  channelType: "all",
   positional: [
     {
       name: "name",
@@ -106,9 +110,7 @@ const command: app.Command = {
   async run(message) {
     app.log(message.args.name) // string | null
   }
-}
-
-export default command
+})
 ```
 
 The last code example will be used like that on Discord:
@@ -123,9 +125,10 @@ This kind of argument is used for options, most often optional.
 ```typescript
 import * as app from "../app"
 
-const command: app.Command = {
+export default new app.Command({
   name: "cmd",
   description: "A command",
+  channelType: "all",
   options: [
     {
       name: "name",
@@ -135,9 +138,7 @@ const command: app.Command = {
   async run(message) {
     app.log(message.args.name) // string | null
   }
-}
-
-export default command
+})
 ```
 
 The last code example will be used like that on Discord:
@@ -152,9 +153,10 @@ The flag is an argument of type "present or not" which returns a boolean. You ca
 ```typescript
 import * as app from "../app"
 
-const command: app.Command = {
+export default new app.Command({
   name: "cmd",
   description: "A command",
+  channelType: "all",
   flags: [
     {
       name: "named",
@@ -165,9 +167,7 @@ const command: app.Command = {
   async run(message) {
     app.log(message.args.named) // true | false
   }
-}
-
-export default command
+})
 ```
 
 The last code example will be used like that on Discord:

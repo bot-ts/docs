@@ -66,7 +66,7 @@ make bot "bot-name" --token "bot-token" --prefix "!" --locale "fr"
 If you want to choose a database other than sqlite3, you can enter it directly with the `--database` option. Several options can then be added, such as host, port, password, etc.
 
 ```bash
-make bot "bot-name" --token "your_token" --database "pg" --schema "postgres" --user "postgres"
+make bot "bot-name" --token "bot-token" --database "pg" --schema "postgres" --user "postgres"
 ```
 
 The connection data to your database are all editable in the `.env` file after the build.
