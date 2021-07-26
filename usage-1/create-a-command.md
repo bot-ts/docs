@@ -48,7 +48,7 @@ const command: app.Command<app.GuildMessage> = {
   // ...some properties
 }
 
-module.exports = command
+export default command
 ```
 {% endtab %}
 
@@ -66,7 +66,7 @@ const command: app.Command<app.DirectMessage> = {
   // ...some properties
 }
 
-module.exports = command
+export default command
 ```
 {% endtab %}
 {% endtabs %}
@@ -108,7 +108,7 @@ const command: app.Command = {
   }
 }
 
-module.exports = command
+export default command
 ```
 
 The last code example will be used like that on Discord:
@@ -137,7 +137,7 @@ const command: app.Command = {
   }
 }
 
-module.exports = command
+export default command
 ```
 
 The last code example will be used like that on Discord:
@@ -167,7 +167,7 @@ const command: app.Command = {
   }
 }
 
-module.exports = command
+export default command
 ```
 
 The last code example will be used like that on Discord:

@@ -20,7 +20,7 @@
 * [Listener](usage-1/create-a-listener.md)
 * [Namespace](usage-1/create-a-namespace.md)
 * [Logger](usage-1/use-logger.md)
-* [Paginator](usage-1/use-paginator.md)
+* [PaginatorNative](usage-1/use-paginator.md)
 * [Database](usage-1/use-database.md)
 * [Middleware](usage-1/middlewares.md)
 
