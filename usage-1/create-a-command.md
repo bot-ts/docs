@@ -31,49 +31,38 @@ Then, the `src/commands/ping.ts` file will be ready to be implemented.
 
 ## Define message origin
 
-<<<<<<< HEAD
 Once your command is created, **If you want handle messages from GuildChannels only or from DMChannel only**, follow these steps.
 
 {% tabs %}
 {% tab title="GuildChannel only" %}
-* Add `app.GuildMessage` generic to command type \(line: 3\)
-* Add the `guildChannelOnly` flag setted to `true` \(line: 5\)
 
 ```typescript
 import * as app from "../app"
 
-const command: app.Command<app.GuildMessage> = {
+export default new app.Command({
 
-  guildChannelOnly: true,
+  channelType: "guild",
 
   // ...some properties
-}
-
-export default command
+})
 ```
 {% endtab %}
 
 {% tab title="DMChannel only" %}
-* Add `app.DirectMessage` generic to command type \(line: 3\)
-* Add the `dmChannelOnly` flag setted to `true` \(line: 5\)
 
 ```typescript
 import * as app from "../app"
 
-const command: app.Command<app.DirectMessage> = {
+export default new app.Command({
 
-  dmChannelOnly: true,
+  channelType: "dm",
 
   // ...some properties
-}
-
-export default command
+})
 ```
 {% endtab %}
 {% endtabs %}
 
-=======
->>>>>>> d09e148b13d4ceb0faf566241de7b10f8398d20c
 ## Setup a cooldown
 
 ## Arguments
