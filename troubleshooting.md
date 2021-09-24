@@ -50,3 +50,29 @@ When you launch the bot after an update from a version older than the "Arliming"
 
 ![Set 2: Replace all app.js imports](.gitbook/assets/image%20%281%29.png)
 
+## My OS replaces the make command in bot.ts with the make command used to build C and C++
+
+Often, on OSX and Linux, the default make command is called instead of make-bot.ts. Here is one of the solutions. to solve this problem.
+
+### Use make-bot.ts from npx
+
+You can use npx to use the desired command without going through the make command of your OS by replacing `make` with `npx make-bot.ts`. For example:
+
+{% tabs %}
+{% tab title="Default" %}
+```bash
+make bot "my-bot"
+
+make listener "messageCreate" --name "messageCreate.badWords"
+```
+{% endtab %}
+
+{% tab title="From NPX" %}
+```bash
+npx make-bot.ts bot "my-bot"
+
+npx make-bot.ts listener "messageCreate" --name "messageCreate.badWords"
+```
+{% endtab %}
+{% endtabs %}
+
