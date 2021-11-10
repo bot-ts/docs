@@ -35,7 +35,6 @@ Once your command is created, **If you want handle messages from GuildChannels o
 
 {% tabs %}
 {% tab title="GuildChannel only" %}
-
 ```typescript
 import * as app from "../app"
 
@@ -49,7 +48,6 @@ export default new app.Command({
 {% endtab %}
 
 {% tab title="DMChannel only" %}
-
 ```typescript
 import * as app from "../app"
 
