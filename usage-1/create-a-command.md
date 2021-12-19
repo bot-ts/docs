@@ -66,7 +66,7 @@ export default new app.Command({
 ## Arguments
 
 {% hint style="warning" %}
-The `\n` character **is not a valid argument separator**. If you want to break the line before putting an argument, add a space at the start of argument. \(_future issue url here_\)
+The `\n` character **is not a valid argument separator**. If you want to break the line before putting an argument, add a space at the start of argument. ([issue#19](https://github.com/CamilleAbella/bot.ts/issues/19#issue-1084182563))
 {% endhint %}
 
 {% hint style="info" %}
@@ -75,7 +75,7 @@ The `name` and `description` argument properties are obligatory.
 
 ### Argument types
 
-There are three specific types of arguments based on the [Yargs](http://yargs.js.org/) parser, here is a short overview.
+There are three specific types of arguments based on the [Yargs](http://yargs.js.org) parser, here is a short overview.
 
 {% tabs %}
 {% tab title="Positional" %}
@@ -159,16 +159,15 @@ export default new app.Command({
 
 The last code example will be used like that on Discord:
 
-| Command | Returning value |
-| :--- | :--- |
-| `!cmd --named off` | `false` |
-| `!cmd --named` | `true` |
-| `!cmd -n` | `true` |
-| `!cmd` | `false` |
+| Command            | Returning value |
+| ------------------ | --------------- |
+| `!cmd --named off` | `false`         |
+| `!cmd --named`     | `true`          |
+| `!cmd -n`          | `true`          |
+| `!cmd`             | `false`         |
 {% endtab %}
 {% endtabs %}
 
 ### Required
 
 If argument is required, it will never have the `null` value and will return an error message before the execution of the command if it is missing. The command will then not be executed.
-
