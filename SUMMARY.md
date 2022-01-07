@@ -14,13 +14,13 @@
 * [Test](scripts/test.md)
 * [Update](scripts/update.md)
 
-## Usage <a id="usage-1"></a>
+## Usage <a href="#usage-1" id="usage-1"></a>
 
 * [Command](usage-1/create-a-command.md)
 * [Listener](usage-1/create-a-listener.md)
 * [Namespace](usage-1/create-a-namespace.md)
 * [Logger](usage-1/use-logger.md)
-* [PaginatorNative](usage-1/use-paginator.md)
+* [Paginator](usage-1/use-paginator.md)
 * [Database](usage-1/use-database.md)
 * [Middleware](usage-1/middlewares.md)
 
@@ -40,4 +40,3 @@
 ## Annexes
 
 * [Discord Support](https://discord.gg/3vC2XWK)
-
