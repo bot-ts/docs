@@ -2,7 +2,9 @@
 description: Real time todo-list from my todo-list discord bot
 ---
 
-# In Coming Features* [ ] bot.ts: setup kanban style for todo command
+# In Coming Features
+
+* [ ] bot.ts: setup kanban style for todo command
 * [ ] bot.ts: failed middlewares not need to return data!
 * [ ] bot.ts: edit gulp watching logs from polytech project
 * [ ] make-bot.ts: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry
