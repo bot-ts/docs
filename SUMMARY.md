@@ -3,6 +3,7 @@
 * [Introduction](README.md)
 * [Installation](installation.md)
 * [Troubleshooting](troubleshooting.md)
+* [In Comming Features](in-comming-features.md)
 
 ## Scripts
 
