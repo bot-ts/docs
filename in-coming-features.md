@@ -1,7 +1,6 @@
 ---
 description: Real time todo-list from my todo-list discord bot
 ---
-
 # In Coming Features* [x] bot.ts: setup kanban style for todo command
 * [ ] bot.ts: failed middlewares not need to return data!
 * [ ] bot.ts: edit gulp watching logs from polytech project
@@ -11,4 +10,4 @@ description: Real time todo-list from my todo-list discord bot
 * [ ] bot.ts: add npx in npm scripts for linux and osx distrib compatibility
 * [ ] make-bot.ts: use Meow (https://www.npmjs.com/package/meow) for the CLI
 * [ ] make-bot.ts: use common boilerplate scripts like `yarn create bot.ts` or `npx create-bot.ts` instead of "make"
-* [ ] bot.ts: replace `??` with `||` in param of handler instances
+* [x] bot.ts: replace `??` with `||` in param of handler instances
