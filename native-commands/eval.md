@@ -73,6 +73,6 @@ return 42 + "0"
 
 ## Annexes
 
-* [Command file](https://github.com/CamilleAbella/bot.ts/blob/master/src/commands/eval.ts)
+* [Command file](https://github.com/bot-ts/framework/blob/master/src/commands/eval.ts)
 * [discord-eval.ts](https://www.npmjs.com/package/discord-eval.ts)
 
