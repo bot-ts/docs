@@ -6,7 +6,7 @@ description: Read this category if you have any issues with the framework or the
 
 ## PSSecurityException on install
 
-When using the CLI, your console displays an error of type **PSSecurityException**. \(picture attached\)
+When using the CLI, your console displays an error of type **PSSecurityException**. (picture attached)
 
 ![](.gitbook/assets/troubleshooting.png)
 
@@ -20,7 +20,7 @@ set-executionpolicy remotesigned
 
 ## SyntaxError: Cannot use import outside a module
 
-When you launch the bot after an update from a version older than the "Arliming" release, you may need to update the package.json file. This problem is due to a conversion of the module system of bot.ts \(from CommonJS to ESModule\).
+When you launch the bot after an update from a version older than the "Arliming" release, you may need to update the package.json file. This problem is due to a conversion of the module system of bot.ts (from CommonJS to ESModule).
 
 ![](.gitbook/assets/typemodule.png)
 
@@ -30,14 +30,14 @@ Just add the `"type": "module",` entry to the package.json file!
 
 ## ERR\_MODULE\_NOT\_FOUND on launch
 
-When you launch the bot after an update from a version older than the "Arliming" release, some imports may be obsolete. This problem is due to a conversion of the module system of bot.ts \(from CommonJS to ESModule\).
+When you launch the bot after an update from a version older than the "Arliming" release, some imports may be obsolete. This problem is due to a conversion of the module system of bot.ts (from CommonJS to ESModule).
 
-![](.gitbook/assets/err_module_not_found.png)
+![](.gitbook/assets/err\_module\_not\_found.png)
 
 ### Fix ERR\_MODULE\_NOT\_FOUND
 
-1. Go to the file at this location: `src/app.js` \(The second path underlined in red\)
-2. Search for the module import `src/app.native`\(The first path underlined in red\)
+1. Go to the file at this location: `src/app.js` (The second path underlined in red)
+2. Search for the module import `src/app.native`(The first path underlined in red)
 3. Add `.js` at the end of the import path.
 
 ### Tip for Jetbrains IDE
@@ -46,9 +46,9 @@ When you launch the bot after an update from a version older than the "Arliming"
 2. Switch to regex mode.
 3. Use the two following sets and click on "Replace all" for each.
 
-![Set 1: Replace all basic imports](.gitbook/assets/image.png)
+![Set 1: Replace all basic imports](<.gitbook/assets/image (2) (2).png>)
 
-![Set 2: Replace all app.js imports](.gitbook/assets/image%20%281%29.png)
+![Set 2: Replace all app.js imports](<.gitbook/assets/image (1).png>)
 
 ## My OS replaces the make command in bot.ts with the make command used to build C and C++
 
@@ -75,4 +75,3 @@ npx make-bot.ts listener "messageCreate" --name "messageCreate.badWords"
 ```
 {% endtab %}
 {% endtabs %}
-

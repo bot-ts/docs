@@ -66,7 +66,7 @@ export default new app.Command({
 ## Arguments
 
 {% hint style="warning" %}
-The `\n` character **is not a valid argument separator**. If you want to break the line before putting an argument, add a space at the start of argument. ([issue#19](https://github.com/bot-ts/framework/issues/19#issue-1084182563))
+The  character **is not a valid argument separator**. If you want to break the line before putting an argument, add a space at the start of argument. ([issue#19](https://github.com/bot-ts/framework/issues/19#issue-1084182563))
 {% endhint %}
 
 {% hint style="info" %}

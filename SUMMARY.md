@@ -38,6 +38,11 @@
 * [Production](deployment/production.md)
 * [Developpment](deployment/developpment.md)
 
+## Contributing
+
+* [Regulations](contributing/regulations.md)
+* [Coding Style](contributing/coding-style.md)
+
 ## Annexes
 
 * [Discord Support](https://discord.gg/3vC2XWK)
