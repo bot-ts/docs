@@ -46,7 +46,7 @@ When you launch the bot after an update from a version older than the "Arliming"
 2. Switch to regex mode.
 3. Use the two following sets and click on "Replace all" for each.
 
-![Set 1: Replace all basic imports](<.gitbook/assets/image (2) (2).png>)
+![Set 1: Replace all basic imports](<.gitbook/assets/image (2) (1) (2).png>)
 
 ![Set 2: Replace all app.js imports](<.gitbook/assets/image (1).png>)
 

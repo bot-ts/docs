@@ -6,16 +6,16 @@ description: Welcome to the bot.ts official documentation.
 
 ![](.gitbook/assets/bot.ts-banner.png)
 
-[![Discord server](https://img.shields.io/discord/507389389098188820?color=7289da\&logo=discord\&logoColor=white)](https://discord.gg/3vC2XWK) [![CLI version](https://img.shields.io/npm/v/make-bot.ts.svg?maxAge=3600)](https://www.npmjs.com/package/make-bot.ts) [![CLI downloads](https://img.shields.io/npm/dt/make-bot.ts.svg?maxAge=3600)](https://www.npmjs.com/package/make-bot.ts) [![Tests](https://github.com/bot-ts/framework/actions/workflows/tests.native.yml/badge.svg?branch=master)](https://github.com/bot-ts/framework/actions/workflows/tests.native.yml) ![Dependency status](https://img.shields.io/librariesio/github/bot-ts/framework) [![Github stars](https://img.shields.io/github/stars/bot-ts/framework?color=black&logo=github)](https://github.com/bot-ts/framework)
+[![Discord server](https://img.shields.io/discord/507389389098188820?color=7289da\&logo=discord\&logoColor=white)](https://discord.gg/3vC2XWK) [![CLI version](https://img.shields.io/npm/v/make-bot.ts.svg?maxAge=3600)](https://www.npmjs.com/package/make-bot.ts) [![CLI downloads](https://img.shields.io/npm/dt/make-bot.ts.svg?maxAge=3600)](https://www.npmjs.com/package/make-bot.ts) [![Tests](https://github.com/bot-ts/framework/actions/workflows/tests.native.yml/badge.svg?branch=master)](https://github.com/bot-ts/framework/actions/workflows/tests.native.yml) ![Dependency status](https://img.shields.io/librariesio/github/bot-ts/framework) [![Github stars](https://img.shields.io/github/stars/bot-ts/framework?color=black\&logo=github)](https://github.com/bot-ts/framework)
 
 ## What is bot.ts ?
 
 **bot.ts** is a framework for [discord.js](https://discord.js.org/#/) designed in TypeScript for use in TypeScript. This framework includes all the features you need, here is a list:
 
-* Advanced handler. (for commands and listeners)
-* [CLI](https://www.npmjs.com/package/make-bot.ts) to generate command and listener files.
+* Advanced handler. (for commands, listeners and tables).
+* [CLI](https://www.npmjs.com/package/make-bot.ts) to generate command, listener, namespace et table files.
 * Very practical file structure. (all the app parts are includes and exported from [app.ts](https://github.com/bot-ts/framework/blob/master/src/app.ts))
-* [Yargs](http://yargs.js.org) based argument system for commands.
+* [Yargs](http://yargs.js.org) shell-based argument system for textual commands.
 * Some essential [commands](https://github.com/bot-ts/framework/blob/master/src/commands) and [listeners](https://github.com/bot-ts/framework/blob/master/src/listeners). (including an advanced "eval" command)
 * Some scripts in [package.json](https://github.com/bot-ts/framework/blob/master/package.json). (including a TypeScript watcher)
 * [Knex](http://knexjs.org) database provider [here](https://github.com/bot-ts/framework/blob/master/src/app/database.ts), configured by default with [sqlite3](https://www.npmjs.com/package/sqlite3).
