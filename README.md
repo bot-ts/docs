@@ -6,7 +6,7 @@ description: Welcome to the bot.ts official documentation.
 
 ![](.gitbook/assets/bot.ts-banner.png)
 
-[![Discord server](https://img.shields.io/discord/507389389098188820?color=7289da\&logo=discord\&logoColor=white)](https://discord.gg/3vC2XWK) [![CLI version](https://img.shields.io/npm/v/make-bot.ts.svg?maxAge=3600)](https://www.npmjs.com/package/make-bot.ts) [![CLI downloads](https://img.shields.io/npm/dt/make-bot.ts.svg?maxAge=3600)](https://www.npmjs.com/package/make-bot.ts) [![Tests](https://github.com/bot-ts/framework/actions/workflows/tests.native.yml/badge.svg?branch=master)](https://github.com/bot-ts/framework/actions/workflows/tests.native.yml) ![Dependency status](https://img.shields.io/librariesio/github/bot-ts/framework)
+[![Discord server](https://img.shields.io/discord/507389389098188820?color=7289da\&logo=discord\&logoColor=white)](https://discord.gg/3vC2XWK) [![CLI version](https://img.shields.io/npm/v/make-bot.ts.svg?maxAge=3600)](https://www.npmjs.com/package/make-bot.ts) [![CLI downloads](https://img.shields.io/npm/dt/make-bot.ts.svg?maxAge=3600)](https://www.npmjs.com/package/make-bot.ts) [![Tests](https://github.com/bot-ts/framework/actions/workflows/tests.native.yml/badge.svg?branch=master)](https://github.com/bot-ts/framework/actions/workflows/tests.native.yml) ![Dependency status](https://img.shields.io/librariesio/github/bot-ts/framework) [![Github stars](https://img.shields.io/github/stars/bot-ts/framework?color=black&logo=github)](https://github.com/bot-ts/framework)
 
 ## What is bot.ts ?
 
