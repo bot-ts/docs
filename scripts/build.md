@@ -10,14 +10,22 @@ It uses esbuild so **it ignores TypeScript type checking**! You must use the [te
 
 ## Usage
 
+{% tabs %}
+{% tab title="npm" %}
 ```bash
-# npm
 npm run build
+```
+{% endtab %}
 
-# yarn
+{% tab title="Yarn" %}
+```bash
 yarn build
+```
+{% endtab %}
 
-# gulp
+{% tab title="Gulp" %}
+```bash
 gulp build
 ```
-
+{% endtab %}
+{% endtabs %}

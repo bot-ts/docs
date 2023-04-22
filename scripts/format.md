@@ -6,16 +6,24 @@ description: Prettier preconfigured util for code formatting.
 
 ## Usage
 
+{% tabs %}
+{% tab title="npm" %}
 ```bash
-# npm
 npm run format
+```
+{% endtab %}
 
-# yarn
+{% tab title="Yarn" %}
+```bash
 yarn format
+```
+{% endtab %}
 
-# prettier
+{% tab title="Prettier" %}
+```bash
 prettier --write src
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Configuration
-

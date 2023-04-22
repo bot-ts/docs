@@ -6,14 +6,22 @@ description: TypeScript type checker automaticaly runned on github actions.
 
 ## Usage
 
+{% tabs %}
+{% tab title="npm" %}
 ```bash
-# npm
 npm test
+```
+{% endtab %}
 
-# yarn
+{% tab title="Yarn" %}
+```bash
 yarn test
+```
+{% endtab %}
 
-# tsc
+{% tab title="tsc" %}
+```bash
 tsc --noEmit
 ```
-
+{% endtab %}
+{% endtabs %}

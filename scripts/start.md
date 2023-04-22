@@ -6,14 +6,24 @@ description: Series of build and run.
 
 ## Usage
 
+{% tabs %}
+{% tab title="npm" %}
 ```bash
-# npm
 npm run start
+```
+{% endtab %}
 
-# yarn
+{% tab title="Yarn" %}
+```bash
 yarn start
+```
+{% endtab %}
+{% endtabs %}
 
-# node (just run, ignore build)
+## Just start
+
+If you want to start without build, do the following command
+
+```bash
 node .
 ```
-

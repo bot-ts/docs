@@ -10,16 +10,25 @@ description: The bot.ts core files updater command.
 
 ## Usage
 
+{% tabs %}
+{% tab title="npm" %}
 ```bash
-# npm
 npm run update
+```
+{% endtab %}
 
-# yarn
+{% tab title="Yarn" %}
+```bash
 yarn update
+```
+{% endtab %}
 
-# gulp
+{% tab title="Gulp" %}
+```bash
 gulp update
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Which files are update?
 
@@ -37,5 +46,4 @@ src/index.ts
 
 ## Customize native file and ignore it during an update
 
-If you want to customize a native file \(`*.native.ts`\), the first step is to **disable updates** on this file. It's easy, **just remove the `native` part of file name**. \(e.g. `eval.native.ts` becomes `eval.ts`\)
-
+If you want to customize a native file (`*.native.ts`), the first step is to **disable updates** on this file. It's easy, **just remove the `native` part of file name**. (e.g. `eval.native.ts` becomes `eval.ts`)

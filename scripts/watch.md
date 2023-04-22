@@ -6,14 +6,22 @@ description: The bot.ts watcher using Nodemon with Gulp.
 
 ## Usage
 
+{% tabs %}
+{% tab title="npm" %}
 ```bash
-# npm
 npm run watch
+```
+{% endtab %}
 
-# yarn
+{% tab title="Yarn" %}
+```bash
 yarn watch
+```
+{% endtab %}
 
-# gulp
+{% tab title="Gulp" %}
+```bash
 gulp watch
 ```
-
+{% endtab %}
+{% endtabs %}
