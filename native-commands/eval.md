@@ -31,12 +31,12 @@ If you type your entire command on one line, you can ignore the keyword `return`
 
 You also have the possibility to encode your code between markdown tags in order to have the indentation.
 
-```haskell
+````haskell
 .eval ```js
 return 42 + "0"
 ```
+````
 
-```text
 ## Async / Await
 
 If your code contains `async/await`, it works at top level like on Deno!
@@ -64,7 +64,7 @@ return 42 + "0"
 
 ### --muted
 
-If you want to run your code in silence, use the `--muted` flag \(or just `-m`\).
+If you want to run your code in silence, use the `--muted` flag (or just `-m`).
 
 ```bash
 .eval --muted
@@ -75,4 +75,3 @@ return 42 + "0"
 
 * [Command file](https://github.com/bot-ts/framework/blob/master/src/commands/eval.ts)
 * [discord-eval.ts](https://www.npmjs.com/package/discord-eval.ts)
-
