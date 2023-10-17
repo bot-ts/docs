@@ -21,7 +21,7 @@ yarn format
 
 {% tab title="Prettier" %}
 ```bash
-prettier --write src
+prettier --write src tests
 ```
 {% endtab %}
 {% endtabs %}

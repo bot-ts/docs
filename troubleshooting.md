@@ -40,15 +40,13 @@ When you launch the bot after an update from a version older than the "Arliming"
 2. Search for the module import `src/app.native`(The first path underlined in red)
 3. Add `.js` at the end of the import path.
 
-### Tip for Jetbrains IDE
+{% hint style="info" %}
+Tip for Jetbrains IDEs
 
 1. Press `ctrl` + `shift` + `R` to open the replacement-tool.
 2. Switch to regex mode.
-3. Use the two following sets and click on "Replace all" for each.
-
-![Set 1: Replace all basic imports](<.gitbook/assets/image (2) (1) (2).png>)
-
-![Set 2: Replace all app.js imports](<.gitbook/assets/image (1).png>)
+3. Use the two following regex and click on "Replace all" for each.<img src=".gitbook/assets/image (2) (1) (2).png" alt="Set 1: Replace all basic imports" data-size="original"><img src=".gitbook/assets/image (1).png" alt="Set 2: Replace all app.js imports" data-size="original">
+{% endhint %}
 
 ## My OS replaces the make command in bot.ts with the make command used to build C and C++
 

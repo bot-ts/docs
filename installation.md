@@ -10,9 +10,9 @@ description: >-
 
 First, you need to make sure that you have an environment compatible with bot.ts.
 
-* Node `^=14`
-* NPM `^=7`
-* Git  `^=2.31.1`
+* Node `^=18.18.2`
+* NPM `^=9.6.2`
+* Git `^=2.31.1`
 
 ## Install the CLI
 
@@ -24,7 +24,7 @@ npm i -g make-bot.ts
 
 ## Generate files
 
-Then you can go to the place where you want to place your project \(e.g. `/home`\) and run the `make bot` command.
+Then you can go to the place where you want to place your project (e.g. `/home`) and run the `make bot` command.
 
 ### CLI pattern
 
@@ -78,4 +78,3 @@ The `.env` file has been created and contains your bot's private information, yo
 ```bash
 cd "bot-name"
 ```
-

@@ -36,7 +36,7 @@ Once your command is created, **If you want handle messages from GuildChannels o
 {% tabs %}
 {% tab title="GuildChannel only" %}
 ```typescript
-import * as app from "../app"
+import * as app from "../app.js"
 
 export default new app.Command({
 
@@ -49,7 +49,7 @@ export default new app.Command({
 
 {% tab title="DMChannel only" %}
 ```typescript
-import * as app from "../app"
+import * as app from "../app.js"
 
 export default new app.Command({
 
@@ -73,7 +73,7 @@ The  character **is not a valid argument separator**. If you want to break the l
 The `name` and `description` argument properties are obligatory.
 {% endhint %}
 
-### Argument types
+### Categories of arguments
 
 There are three specific types of arguments based on the [Yargs](http://yargs.js.org) parser, here is a short overview.
 
@@ -82,7 +82,7 @@ There are three specific types of arguments based on the [Yargs](http://yargs.js
 The most common type of argument on Discord bots. It is used to define values according to their positioning in the command typed.
 
 ```typescript
-import * as app from "../app"
+import * as app from "../app.js"
 
 export default new app.Command({
   name: "cmd",
@@ -110,7 +110,7 @@ The last code example will be used like that on Discord:
 This kind of argument is used for options, most often optional.
 
 ```typescript
-import * as app from "../app"
+import * as app from "../app.js"
 
 export default new app.Command({
   name: "cmd",
@@ -138,7 +138,7 @@ The last code example will be used like that on Discord:
 The flag is an argument of type "present or not" which returns a boolean. You can also assign it values such as `on/off` or `1/0` or `true/false` or `Y/N`, it will always return a boolean.
 
 ```typescript
-import * as app from "../app"
+import * as app from "../app.js"
 
 export default new app.Command({
   name: "cmd",
@@ -166,8 +166,83 @@ The last code example will be used like that on Discord:
 | `!cmd -n`          | `true`          |
 | `!cmd`             | `false`         |
 {% endtab %}
+
+{% tab title="Rest" %}
+Represents all command text that was not passed as an argument.
+
+```typescript
+import * as app from "../app.js"
+
+export default new app.Command({
+  name: "cmd",
+  description: "A command",
+  channelType: "all",
+  rest: {
+    name: "name",
+    description: "The rest of arguments",
+    required: true
+  },
+  async run(message) {
+    app.log(message.args.name) // string
+  }
+})
+```
+
+The last code example will be used like that on Discord:
+
+* `!cmd multiline value`
+* `!cmd value`
+{% endtab %}
 {% endtabs %}
 
-### Required
+### Required arguments
 
 If argument is required, it will never have the `null` value and will return an error message before the execution of the command if it is missing. The command will then not be executed.
+
+### Casting types
+
+Yout can use the `castValue` property to force a certain type of input and convert the textual input into an object of the type you want.&#x20;
+
+For example if I want the user to mention a member as positional, and retrieve the `GuildMember` mentioned in the body of my command, I can use the `castValue` property like this:
+
+```typescript
+import * as app from "../app.js"
+
+export default new app.Command({
+  name: "cmd",
+  description: "A command",
+  channelType: "all",
+  positional: [
+    {
+      name: "target",
+      description: "The mentionned member",
+      castValue: "member",
+      required: true
+    }
+  ],
+  async run(message) {
+    app.log(message.args.target) // GuildMember
+  }
+})
+```
+
+Here is a list of keys that you can use as values for the `castValue` property, along with the associated conversion types. I present it to you as it is in the source code because it is a simple interface.
+
+```typescript
+export interface ArgumentValues {
+  "number": number
+  "date": Date
+  "json": object
+  "boolean": boolean
+  "regex": RegExp
+  "array": Array<string>
+  "user": discord.User
+  "member": discord.GuildMember
+  "channel": discord.AnyChannel
+  "message": discord.Message
+  "role": discord.Role
+  "emote": discord.GuildEmoji | string
+  "invite": discord.Invite
+  "command": command.Command<keyof command.CommandMessageType>
+}
+```

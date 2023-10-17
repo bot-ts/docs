@@ -6,7 +6,7 @@
 
 ## Scripts
 
-* [Overview](scripts/overview.md)
+* [Scripts overview](scripts/overview.md)
 * [Build](scripts/build.md)
 * [Start](scripts/start.md)
 * [Format](scripts/format.md)
