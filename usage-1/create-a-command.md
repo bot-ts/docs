@@ -6,10 +6,10 @@ To create a command it is recommended to use the [CLI](https://www.npmjs.com/pac
 
 ### CLI pattern
 
-By typing `make command -h` you will get this following information.
+By typing `bot add command -h` you will get this following information.
 
 ```bash
-make command <name>
+bot add command <name>
 
 Positionals:
   name       # command name                                             [required]
@@ -24,7 +24,7 @@ Options:
 For a "ping" command, type the following command.
 
 ```bash
-make command "ping"
+bot add command "ping"
 ```
 
 Then, the `src/commands/ping.ts` file will be ready to be implemented.

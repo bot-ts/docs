@@ -6,10 +6,10 @@ Like the commands, it is recommended to use the [CLI](https://www.npmjs.com/pack
 
 ### CLI pattern
 
-By typing `make listener -h` you will get this following information.
+By typing `bot add listener -h` you will get this following information.
 
 ```bash
-make listener <event>
+bot add listener <event>
 
 Positionals:
   event      # listener event name                                      [required]
@@ -25,7 +25,7 @@ Options:
 For a "ready" listener that displays Hello World in the console, type the following command.
 
 ```bash
-make listener "ready" --name "helloWorld"
+bot add listener "ready" --name "helloWorld"
 ```
 
 Then, the `src/listeners/helloWorld.ts` file will be ready to be implemented.
@@ -33,5 +33,5 @@ Then, the `src/listeners/helloWorld.ts` file will be ready to be implemented.
 You can use the default naming pattern `{category or behavior}.{event name}` to organize your listeners. Example:
 
 ```bash
-make listener "ready" --name "hellowWorld.ready"
+bot add listener "ready" --name "hellowWorld.ready"
 ```

@@ -12,10 +12,10 @@ You must use the [CLI](https://www.npmjs.com/package/make-bot.ts) to create your
 
 ### CLI pattern
 
-By typing `make command -h` you will get this following information.
+By typing `bot add namespace -h` you will get this following information.
 
 ```bash
-make namespace <name>
+bot add namespace <name>
 
 Positionals:
   name       # command name                                             [required]
