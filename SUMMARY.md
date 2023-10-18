@@ -4,15 +4,15 @@
 * [Installation](installation.md)
 * [Troubleshooting](troubleshooting.md)
 
-## Scripts
+## Command line
 
-* [Scripts overview](scripts/overview.md)
-* [Build](scripts/build.md)
-* [Start](scripts/start.md)
-* [Format](scripts/format.md)
-* [Watch](scripts/watch.md)
-* [Test](scripts/test.md)
-* [Update](scripts/update.md)
+* [CLI Overview](command-line/overview.md)
+* [Build](command-line/build.md)
+* [Start](command-line/start.md)
+* [Format](command-line/format.md)
+* [Watch](command-line/watch.md)
+* [Test](command-line/test.md)
+* [Update](command-line/update.md)
 
 ## Usage <a href="#usage-1" id="usage-1"></a>
 
@@ -22,15 +22,18 @@
 * [Logger](usage-1/use-logger.md)
 * [Paginator](usage-1/use-paginator.md)
 * [Database](usage-1/use-database.md)
-* [Middleware](usage-1/middlewares.md)
 
 ## Native commands
 
 * [Eval](native-commands/eval.md)
 * [Help](native-commands/help.md)
-* [Prefix](native-commands/prefix.md)
+* [Database](native-commands/prefix.md)
 * [Terminal](native-commands/terminal.md)
 * [Turn](native-commands/turn.md)
+
+## Command examples
+
+* [Prefix](command-examples/turn.md)
 
 ## Deployment
 

@@ -63,7 +63,31 @@ export default new app.Command({
 
 ## Setup a cooldown
 
+If you want to setup a cooldown, you simply need to add the coolDown property when you create the command, define the duration you want in milliseconds, and trigger the cooldown where you want in the command body. Example:
+
+```typescript
+import * as app from "../app.js"
+
+export default new app.Command({
+  name: "hourly",
+  coolDown: 1000 * 60 * 60, // 1 hour of cooldown
+  async run(message) {
+    if(app.canAccessHourly(message.author)) {
+      // trigger the cooldown only if hourly is triggered
+      message.triggerCoolDown() 
+      await app.processHourly(message.author)
+    }
+  }
+})
+```
+
+{% hint style="info" %}
+If you forget the `message.triggerCoolDown()` in the command, a warn appear in server logs on loading of the command.
+{% endhint %}
+
 ## Arguments
+
+ALl command can have a lots of arguments. This framework considers that Discord bot commands should resemble Unix commands in their syntax. You will therefore find some similarities between CLIs and the commands of your Discord bot.
 
 {% hint style="warning" %}
 The  character **is not a valid argument separator**. If you want to break the line before putting an argument, add a space at the start of argument. ([issue#19](https://github.com/bot-ts/framework/issues/19#issue-1084182563))
@@ -246,3 +270,19 @@ export interface ArgumentValues {
   "command": command.Command<keyof command.CommandMessageType>
 }
 ```
+
+## Middlewares
+
+{% hint style="warning" %}
+The documentation is currently being produced.
+{% endhint %}
+
+## About commands
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}

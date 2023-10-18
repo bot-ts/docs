@@ -1,0 +1,15 @@
+# CLI Overview
+
+## PackageJSON scripts
+
+Use these scripts via `yarn` or`npm run` to manage your project.
+
+<table><thead><tr><th width="121">Command</th><th width="242.33333333333331">Body</th><th>Description</th></tr></thead><tbody><tr><td><a href="build.md">build</a></td><td><code>gulp build</code></td><td>Compile TypeScript from <code>./src</code> to <code>./dist</code> directory</td></tr><tr><td><a href="start.md">start</a></td><td><code>gulp build &#x26;&#x26; node .</code></td><td>Build and run the bot from <code>./dist</code></td></tr><tr><td><a href="format.md">format</a></td><td><code>prettier --write src</code></td><td>Beatify files in <code>./src</code> using a <code>--no-semi</code> config</td></tr><tr><td><a href="watch.md">watch</a></td><td><code>gulp watch</code></td><td>Build, run and watch files</td></tr><tr><td><a href="test.md">test</a></td><td><code>tsc --noEmit</code></td><td>Check if TypeScript types are valids</td></tr><tr><td><a href="update.md">update</a></td><td><code>gulp update</code></td><td>Update core/native files of bot.ts</td></tr></tbody></table>
+
+## CLI sub commands
+
+The following commands are included in [make-bot.ts](https://github.com/GhomKrosmonaute/make-bot.ts). Use these sub commands via the `bot` command to create bot objects or any else.
+
+Type `bot <command> --help` to get help about the sub command.
+
+<table><thead><tr><th width="188">Command</th><th>Description</th></tr></thead><tbody><tr><td><a href="../installation.md#generate-files">make</a></td><td>Make a folder in the current directory and create a new bot inside.</td></tr><tr><td><a href="../usage-1/use-database.md">set database</a></td><td>Update the database client, replace the src/app/database.ts file, some .env values and update the database dependencies.</td></tr><tr><td><a href="../usage-1/create-a-command.md#create-a-command">add command</a></td><td>Create a command file and generate content from CLI parameters.</td></tr><tr><td><a href="../usage-1/create-a-listener.md#create-a-listener">add listener</a></td><td>Create a listener file and generate content from CLI parameters.</td></tr><tr><td><a href="../usage-1/use-database.md">add table</a></td><td>Create a table file and generate content from CLI parameters.</td></tr><tr><td><a href="../usage-1/create-a-namespace.md#create-a-namespace">add namespace</a></td><td>Create a namespace file and link it in the app.ts file.</td></tr></tbody></table>

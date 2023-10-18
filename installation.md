@@ -10,13 +10,13 @@ description: >-
 
 First, you need to make sure that you have an environment compatible with bot.ts.
 
-* Node `^=18.18.2`
-* NPM `^=9.6.2`
-* Git `^=2.31.1`
+* Node `^=18.x.x`
+* NPM `^=9.x.x`
+* Git `^=2.x.x`
 
 ## Install the CLI
 
-To install bot.ts, you must first install globaly the CLI with the following command.
+To install bot.ts, you must first install globaly the CLI with the following command.&#x20;
 
 ```bash
 npm i -g make-bot.ts
@@ -29,7 +29,7 @@ Then you can go to the place where you want to place your project (e.g. `/home`)
 ### CLI pattern
 
 ```bash
-make bot [name] [path]
+bot make [name] [path]
 
 Positionals:
   name                  # Bot name                             [default: "bot.ts"]
@@ -60,13 +60,13 @@ Options:
 Setup a simple bot with sqlite3.
 
 ```bash
-make bot "bot-name" --token "bot-token" --prefix "!" --locale "fr"
+bot make "bot-name" --token "bot-token" --prefix "!" --locale "fr"
 ```
 
 If you want to choose a database other than sqlite3, you can enter it directly with the `--database` option. Several options can then be added, such as host, port, password, etc.
 
 ```bash
-make bot "bot-name" --token "bot-token" --database "pg" --schema "postgres" --user "postgres"
+bot make "bot-name" --token "bot-token" --database "pg" --schema "postgres" --user "postgres"
 ```
 
 The connection data to your database are all editable in the `.env` file after the build.
