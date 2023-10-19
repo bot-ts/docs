@@ -4,6 +4,12 @@ description: Advanced eval command for bot owner tests.
 
 # Eval
 
+## Description
+
+This command is surely the most useful of all, after the help command of course. It is used to execute JavaScript critical code directly on the server where the bot is located. This can be used in particular to test features or to do debugging.
+
+The package used by this command to resolve the code is on npm as [discord-eval.ts](https://www.npmjs.com/package/discord-eval.ts), which itself uses [ghom-eval](https://www.npmjs.com/package/ghom-eval). These two packages are created by the creator of this framework.
+
 ## Command pattern
 
 In the Discord server where you invited the bot, use the following command pattern in a channel accessible by the bot.
@@ -73,5 +79,5 @@ return 42 + "0"
 
 ## Annexes
 
-* [Command file](https://github.com/bot-ts/framework/blob/master/src/commands/eval.ts)
+* [Command file](https://github.com/bot-ts/framework/blob/master/src/commands/eval.native.ts)
 * [discord-eval.ts](https://www.npmjs.com/package/discord-eval.ts)
