@@ -1,0 +1,12 @@
+{
+  "name": "@ghom/bot.ts-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Documentation for @ghom/bot.ts",
+  "scripts": {
+    "readme": "node update-readme.js"
+  },
+  "devDependencies": {
+    "axios": "^1.6.0"
+  }
+}
