@@ -8,7 +8,7 @@ description: Welcome to the bot.ts official documentation.
   <div class="title"></div>
   <div>
     <a href="https://ghom.gitbook.io/bot-ts/">
-      <img src="https://media.discordapp.net/attachments/609313381421154304/1168550107239690240/bot.ts_banner.png"/>
+      ![bot.ts](https://media.discordapp.net/attachments/609313381421154304/1168550107239690240/bot.ts_banner.png)
     </a>
   </div>
   <div>
