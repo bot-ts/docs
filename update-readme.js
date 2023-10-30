@@ -14,7 +14,7 @@ description: Welcome to the bot.ts official documentation.
 
 # Introduction
 
-![banner](https://media.discordapp.net/attachments/609313381421154304/1168550107239690240/bot.ts_banner.png)
+![](https://media.discordapp.net/attachments/609313381421154304/1168550107239690240/bot.ts_banner.png)
 
 ${response.data.replace(/<div class="banner">.+?<\/div>/s, "")}`,
       (err) => {
