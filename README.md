@@ -4,13 +4,11 @@ description: Welcome to the bot.ts official documentation.
 
 # Introduction
 
+![banner](https://media.discordapp.net/attachments/609313381421154304/1168550107239690240/bot.ts_banner.png)
+
 <div align="center">
   <div class="title"></div>
-  <div>
-    <a href="https://ghom.gitbook.io/bot-ts/">
-      ![bot.ts](https://media.discordapp.net/attachments/609313381421154304/1168550107239690240/bot.ts_banner.png)
-    </a>
-  </div>
+  
   <div>
     <a href="https://discord.gg/3vC2XWK"><img src="https://img.shields.io/discord/507389389098188820?color=7289da&logo=discord&logoColor=white" alt="Discord server" /></a>
     <a href="https://www.npmjs.com/package/@ghom/bot.ts-cli"><img src="https://img.shields.io/npm/v/@ghom/bot.ts-cli.svg?maxAge=3600" alt="CLI version" /></a>
