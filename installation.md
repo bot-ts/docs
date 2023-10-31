@@ -19,7 +19,7 @@ First, you need to make sure that you have an environment compatible with bot.ts
 To install bot.ts, you must first install globaly the CLI with the following command.&#x20;
 
 ```bash
-npm i -g make-bot.ts
+npm i -g @ghom/bot.ts-cli
 ```
 
 ## Generate files

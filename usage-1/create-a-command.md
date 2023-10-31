@@ -70,7 +70,7 @@ import * as app from "../app.js"
 
 export default new app.Command({
   name: "hourly",
-  coolDown: 1000 * 60 * 60, // 1 hour of cooldown
+  cooldown: 1000 * 60 * 60, // 1 hour of cooldown
   async run(message) {
     if(app.canAccessHourly(message.author)) {
       // trigger the cooldown only if hourly is triggered
@@ -115,7 +115,8 @@ export default new app.Command({
   positional: [
     {
       name: "name",
-      description: "A name positional"
+      description: "A name positional",
+      type: "string"
     }
   ],
   async run(message) {
@@ -143,7 +144,8 @@ export default new app.Command({
   options: [
     {
       name: "name",
-      description: "A name option"
+      description: "A name option",
+      type: "string"
     }
   ],
   async run(message) {
@@ -240,7 +242,7 @@ export default new app.Command({
     {
       name: "target",
       description: "The mentionned member",
-      castValue: "member",
+      type: "member",
       required: true
     }
   ],
@@ -272,6 +274,12 @@ export interface ArgumentValues {
 ```
 
 ## Middlewares
+
+{% hint style="warning" %}
+The documentation is currently being produced.
+{% endhint %}
+
+## Slash commands
 
 {% hint style="warning" %}
 The documentation is currently being produced.

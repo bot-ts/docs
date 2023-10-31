@@ -13,6 +13,7 @@
 * [Watch](command-line/watch.md)
 * [Test](command-line/test.md)
 * [Update](command-line/update.md)
+* [Readme](command-line/readme.md)
 
 ## Usage <a href="#usage-1" id="usage-1"></a>
 
@@ -30,6 +31,7 @@
 * [Database](native-commands/prefix.md)
 * [Terminal](native-commands/terminal.md)
 * [Turn](native-commands/turn.md)
+* [Info](native-commands/info.md)
 
 ## Command examples
 

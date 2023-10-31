@@ -25,3 +25,5 @@ tsc --noEmit
 ```
 {% endtab %}
 {% endtabs %}
+
+This script will notify you if a framework update is available.
