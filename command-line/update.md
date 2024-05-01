@@ -47,3 +47,7 @@ src/index.ts
 ## Customize native file and ignore it during an update
 
 If you want to customize a native file (`*.native.ts`), the first step is to **disable updates** on this file. It's easy, **just remove the `native` part of file name**. (e.g. `eval.native.ts` becomes `eval.ts`)
+
+## You get an error while using the command&#x20;
+
+If you get an error telling you that your Gulpfile has been changed, don't worry! You simply have to **rerun the command** in order to use the new Gulpfile to update the framework.

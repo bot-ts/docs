@@ -35,3 +35,17 @@ You can use the default naming pattern `{category or behavior}.{event name}` to 
 ```bash
 bot add listener "ready" --name "hellowWorld.ready"
 ```
+
+## Additional events
+
+For the proper functioning of the framework, some additional events have been added. Here is a list.
+
+```typescript
+interface MoreClientEvents {
+  /** Already existing event. I just added the typing */
+  raw: [packet: GatewayDispatchPayload]
+  
+  /** Called after the end of all "ready" listeners */
+  afterReady: [Client<true>]
+}
+```
