@@ -45,5 +45,7 @@ Tip for Jetbrains IDEs
 
 1. Press `ctrl` + `shift` + `R` to open the replacement-tool.
 2. Switch to regex mode.
-3. Use the following regex and click on "Replace all".<img src=".gitbook/assets/add_js_ext.png" alt="Set 1: Replace all basic imports" data-size="original">
+3.  Use the following regex and click on "Replace all".
+
+    <figure><img src=".gitbook/assets/add_js_ext (4).png" alt=""><figcaption><p>Regex to catch all missing .js extensions</p></figcaption></figure>
 {% endhint %}
