@@ -45,5 +45,5 @@ Tip for Jetbrains IDEs
 
 1. Press `ctrl` + `shift` + `R` to open the replacement-tool.
 2. Switch to regex mode.
-3. Use the two following regex and click on "Replace all" for each.<img src=".gitbook/assets/image (2) (1) (2).png" alt="Set 1: Replace all basic imports" data-size="original"><img src=".gitbook/assets/image (1).png" alt="Set 2: Replace all app.js imports" data-size="original">
+3. Use the following regex and click on "Replace all".<img src=".gitbook/assets/add_js_ext.png" alt="Set 1: Replace all basic imports" data-size="original">
 {% endhint %}

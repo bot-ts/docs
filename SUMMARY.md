@@ -35,7 +35,7 @@
 
 ## Command examples
 
-* [Prefix](command-examples/turn.md)
+* [Prefix](command-examples/prefix.md)
 
 ## Deployment
 
