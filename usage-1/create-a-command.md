@@ -36,7 +36,7 @@ Once your command is created, **If you want handle messages from GuildChannels o
 {% tabs %}
 {% tab title="GuildChannel only" %}
 ```typescript
-import * as app from "../app.js"
+import * as app from "#app"
 
 export default new app.Command({
 
@@ -49,7 +49,7 @@ export default new app.Command({
 
 {% tab title="DMChannel only" %}
 ```typescript
-import * as app from "../app.js"
+import * as app from "#app"
 
 export default new app.Command({
 
@@ -66,7 +66,7 @@ export default new app.Command({
 If you want to setup a cooldown, you simply need to add the coolDown property when you create the command, define the duration you want in milliseconds, and trigger the cooldown where you want in the command body. Example:
 
 ```typescript
-import * as app from "../app.js"
+import * as app from "#app"
 
 export default new app.Command({
   name: "hourly",
@@ -106,7 +106,7 @@ There are three specific types of arguments based on the [Yargs](http://yargs.js
 The most common type of argument on Discord bots. It is used to define values according to their positioning in the command typed.
 
 ```typescript
-import * as app from "../app.js"
+import * as app from "#app"
 
 export default new app.Command({
   name: "cmd",
@@ -135,7 +135,7 @@ The last code example will be used like that on Discord:
 This kind of argument is used for options, most often optional.
 
 ```typescript
-import * as app from "../app.js"
+import * as app from "#app"
 
 export default new app.Command({
   name: "cmd",
@@ -164,7 +164,7 @@ The last code example will be used like that on Discord:
 The flag is an argument of type "present or not" which returns a boolean. You can also assign it values such as `on/off` or `1/0` or `true/false` or `Y/N`, it will always return a boolean.
 
 ```typescript
-import * as app from "../app.js"
+import * as app from "#app"
 
 export default new app.Command({
   name: "cmd",
@@ -197,7 +197,7 @@ The last code example will be used like that on Discord:
 Represents all command text that was not passed as an argument.
 
 ```typescript
-import * as app from "../app.js"
+import * as app from "#app"
 
 export default new app.Command({
   name: "cmd",
@@ -232,7 +232,7 @@ Yout can use the `castValue` property to force a certain type of input and conve
 For example if I want the user to mention a member as positional, and retrieve the `GuildMember` mentioned in the body of my command, I can use the `castValue` property like this:
 
 ```typescript
-import * as app from "../app.js"
+import * as app from "#app"
 
 export default new app.Command({
   name: "cmd",

@@ -15,7 +15,7 @@ description: Welcome to the bot.ts official documentation.
 
 * Basic file handler using [@ghom/handler](https://www.npmjs.com/package/@ghom/handler) package.
 * Advanced CLI to generate files from [@ghom/bot.ts-cli](https://www.npmjs.com/package/@ghom/bot.ts-cli) package.
-* Very practical file structure. (all the app parts are includes and exported from [app.ts](https://github.com/bot-ts/framework/blob/master/src/app.ts))
+* Usage of Node subpath imports (all the framwork is accessible from [app.ts](https://github.com/bot-ts/framework/blob/master/src/app.ts) as `#app`)
 * [Yargs](http://yargs.js.org/) shell-based argument system for textual commands.
 * Efficient typing of arguments using [GhomKrosmonaute/prop-transfer-typings.ts](https://gist.github.com/GhomKrosmonaute/00da4eb3e8ac48a751602288fcf71835) Gist.
 * Some essential [commands](https://github.com/bot-ts/framework/blob/master/src/commands) and [listeners](https://github.com/bot-ts/framework/blob/master/src/listeners). (including an advanced "eval" command)
