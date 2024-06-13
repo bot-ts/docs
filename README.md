@@ -23,7 +23,7 @@ description: Welcome to the bot.ts official documentation.
 * [Knex](http://knexjs.org/) ORM configured by default with [sqlite3](https://www.npmjs.com/package/sqlite3): [@ghom/orm](https://www.npmjs.com/package/@ghom/orm)
 * Efficient [pagination](https://github.com/bot-ts/framework/blob/master/src/app/pagination.ts) system. (example in [help](https://github.com/bot-ts/framework/blob/master/src/commands/help.native.ts#L34) command)
 * [ESBuild](https://esbuild.github.io) configuration for a build faster than 100ms.
-* GitHub Actions checks for TYpeScript typings [here](https://github.com/bot-ts/framework/blob/master/.github/workflows/test.yml).
+* GitHub Actions checks for TypeScript typings [here](https://github.com/bot-ts/framework/blob/master/.github/workflows/test.yml).
 * Beautiful console logger using [Chalk](https://github.com/chalk/chalk) and [@ghom/logger](https://www.npmjs.com/package/@ghom/logger).
 * [Gulp](https://gulpjs.com/) based framework updater.
 

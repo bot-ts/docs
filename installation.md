@@ -10,7 +10,7 @@ description: >-
 
 First, you need to make sure that you have an environment compatible with bot.ts.
 
-* Node `^=18.x.x`
+* Node `^=20.x.x`
 * NPM `^=9.x.x`
 * Git `^=2.x.x`
 
