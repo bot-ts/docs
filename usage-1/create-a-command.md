@@ -68,14 +68,21 @@ If you want to setup a cooldown, you simply need to add the coolDown property wh
 ```typescript
 import * as app from "#app"
 
+const canAccessHourly: () => boolean = //...
+const processHourly: () => Promise = //...
+
 export default new app.Command({
   name: "hourly",
-  cooldown: 1000 * 60 * 60, // 1 hour of cooldown
+  cooldown: {
+    duration: 1000 * 60 * 60, // 1 hour of cooldown
+    type: app.CooldownType.Global,
+  },
   async run(message) {
-    if(app.canAccessHourly(message.author)) {
+    if(canAccessHourly()) {
       // trigger the cooldown only if hourly is triggered
       message.triggerCoolDown() 
-      await app.processHourly(message.author)
+      
+      await processHourly()
     }
   }
 })
@@ -227,9 +234,9 @@ If argument is required, it will never have the `null` value and will return an 
 
 ### Casting types
 
-Yout can use the `castValue` property to force a certain type of input and convert the textual input into an object of the type you want.&#x20;
+Yout can use the `type` property to force a certain type of input and convert the textual input into an object of the type you want.&#x20;
 
-For example if I want the user to mention a member as positional, and retrieve the `GuildMember` mentioned in the body of my command, I can use the `castValue` property like this:
+For example if I want the user to mention a member as positional, and retrieve the `GuildMember` mentioned in the body of my command, I can use the `type` property like this:
 
 ```typescript
 import * as app from "#app"
@@ -252,7 +259,7 @@ export default new app.Command({
 })
 ```
 
-Here is a list of keys that you can use as values for the `castValue` property, along with the associated conversion types. I present it to you as it is in the source code because it is a simple interface.
+Here is a list of keys that you can use as values for the `type` property, along with the associated conversion types. I present it to you as it is in the source code because it is a simple interface.
 
 ```typescript
 export interface ArgumentValues {
