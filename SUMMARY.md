@@ -10,6 +10,7 @@
 * [Build](command-line/build.md)
 * [Start](command-line/start.md)
 * [Format](command-line/format.md)
+* [Lint](command-line/lint.md)
 * [Watch](command-line/watch.md)
 * [Test](command-line/test.md)
 * [Update](command-line/update.md)
