@@ -7,6 +7,7 @@
 ## Command line
 
 * [CLI Overview](command-line/overview.md)
+* [Docker](command-line/docker.md)
 * [Build](command-line/build.md)
 * [Start](command-line/start.md)
 * [Format](command-line/format.md)
