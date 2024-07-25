@@ -30,7 +30,7 @@
 
 * [Eval](native-commands/eval.md)
 * [Help](native-commands/help.md)
-* [Database](native-commands/prefix.md)
+* [Database](native-commands/database.md)
 * [Terminal](native-commands/terminal.md)
 * [Turn](native-commands/turn.md)
 * [Info](native-commands/info.md)
