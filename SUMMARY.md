@@ -16,6 +16,7 @@
 * [Test](command-line/test.md)
 * [Update](command-line/update.md)
 * [Readme](command-line/readme.md)
+* [Final](command-line/final.md)
 
 ## Usage <a href="#usage-1" id="usage-1"></a>
 
