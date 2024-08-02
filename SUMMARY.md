@@ -7,6 +7,7 @@
 ## Command line
 
 * [CLI Overview](command-line/overview.md)
+* [Docker](command-line/docker.md)
 * [Build](command-line/build.md)
 * [Start](command-line/start.md)
 * [Format](command-line/format.md)
@@ -29,7 +30,7 @@
 
 * [Eval](native-commands/eval.md)
 * [Help](native-commands/help.md)
-* [Database](native-commands/prefix.md)
+* [Database](native-commands/database.md)
 * [Terminal](native-commands/terminal.md)
 * [Turn](native-commands/turn.md)
 * [Info](native-commands/info.md)
