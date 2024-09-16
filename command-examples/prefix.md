@@ -14,7 +14,7 @@ First, we will generate a blank table file that will represent the configuration
 bot add table "guild"
 ```
 
-Your new file is located in `src/tables/guild.ts`. You must now open the file and add all the properties you want to have in this table in order to configure each guild independently.&#x20;
+Your new file is located in `src/tables/guild.ts`. You must now open the file and add all the properties you want to have in this table in order to configure each guild independently.
 
 For our example we are only going to add the `_id` column for incrementation and references, the `id` column for correspondence with the guild snowflake on Discord, and finally the `prefix` column.
 
@@ -30,7 +30,7 @@ export interface Guild {
 export default new app.Table<Guild>({
   name: "guild",
   setup: (table) => {
-    table.increments("_id", { primaryKey: true }).unsigned()
+    table.increments("_id").primary().unsigned()
     table.string("id").unique().notNullable()
     table.string("prefix")
   },
@@ -47,22 +47,25 @@ bot add namespace "tools"
 
 Your new file is located in `src/namespaces/tools.ts`. You must now open the file, import the created table and create the `getGuildPrefix` function. The function should return the bot's default prefix if the guild does not have a custom prefix.
 
-<pre class="language-typescript"><code class="lang-typescript"><strong>import * as app from "#app"
-</strong><strong>
-</strong><strong>import guildTable from "#tables/guild.js"
+<pre class="language-typescript"><code class="lang-typescript"><strong>import type * as app from "#app"
+</strong>
+import env from "#env"
+
+<strong>import guildTable from "#tables/guild.ts"
 </strong>
 export async function getGuildPrefix(guild?: app.Guild | null): Promise&#x3C;string> {
-  let prefix = process.env.BOT_PREFIX as string
-  
+  const prefix = env.BOT_PREFIX
+
   if (guild) {
     const guildData = await guildTable.query
       .where("id", guild.id)
       .select("prefix")
       .first()
       
-    if (guildData) return guildData.prefix ?? prefix
+    if (guildData)
+      return guildData.prefix ?? prefix
   }
-  
+
   return prefix
 }
 </code></pre>
@@ -72,12 +75,14 @@ export async function getGuildPrefix(guild?: app.Guild | null): Promise&#x3C;str
 In the `src/config.ts` file, add the `getPrefix` option and make it use the `getGuildPrefix` function of the namespace you just created.
 
 ```typescript
-import * as app from "#app"
+import { Config } from "#src/app/config.ts"
 
-export const config: app.Scrap<app.Config> = () => ({
+export const config = new Config({
   // ...
-  getPrefix: (message) => {
-    return app.getGuildPrefix(message.guild)
+  async getPrefix(message) {
+    return import("#app").then((app) => 
+      app.getGuildPrefix(message.guild)
+    )
   },
   // ...
 })
@@ -135,6 +140,8 @@ export default new app.Command({
 We can finally write the body of the command in order to make it work by changing the value in the database if a valid prefix has been transmitted. Otherwise, we display the current bot prefix for this guild.
 
 ```typescript
+import guildTable from "#tables/guild.js"
+
 export default new app.Command({
   // ...
   async run(message) {
@@ -147,7 +154,7 @@ export default new app.Command({
         }\``,
       )
 
-    await guilds.query
+    await guildTable.query
       .insert({
         id: message.guild.id,
         prefix: prefix,
