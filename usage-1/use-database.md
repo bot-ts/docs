@@ -1,3 +1,7 @@
+---
+description: Everything he needs to know about the database
+---
+
 # Database
 
 ## Set up the database
@@ -38,7 +42,7 @@ This command updates the `src/app/database.ts` file, installs the necessary depe
 
 ## Create a table
 
-To create a new table, you can use the following command, which will generate a new file in the `src/tables/` directory:
+To create a new table, you can use the following command, which will generate a new file in the `src/tables/{name}` directory:
 
 ### CLI pattern
 
@@ -68,7 +72,7 @@ After running this command, you will need to manually configure the columns and 
 
 ### Example of table configuration
 
-Here’s an example of how to configure a table:
+Here’s an example of how to configure a table. Welcome to the `src/tables/users.ts` file:
 
 ```typescript
 import { Table } from "#database"
@@ -90,13 +94,15 @@ export default new Table<User>({
 });
 ```
 
-## ORM with Knex
+## About Knex and ORM usage
 
 This framework's ORM uses Knex.js as its query builder to facilitate database interactions. You can import your table configurations easily in your command files and use very simple queries as method chains.
 
+Access to the Knex documentation here: [https://knexjs.org/guide/](https://knexjs.org/guide/)
+
 ### Example of using a table in a command
 
-To use your newly created table in a command, you can do the following:
+To use your newly created table in a command, you can launch a typed Knex query with the `<Table>.query` property.
 
 ```typescript
 import * as app from "#app";
@@ -116,7 +122,11 @@ export default new app.SlashCommand({
 
 ## Migrations
 
-Migrations are automatically managed by the ORM. You can create migrations by adding keys to the `TableOption.migrations` object. The type of this object is `Record<Version as number, Migration as (tableBuilder) => void>`.
+Migrations are automatically managed by the ORM. You can create migrations by adding keys to the `TableOption.migrations` object.&#x20;
+
+The type of this object is `Record<Version as number, Migration as (tableBuilder) => void>`.
+
+Migrations are automatically run at each bot launch and in ascending order based on their versions.
 
 ### Example of defining migrations
 
@@ -143,7 +153,7 @@ export default new Table<User>({
 
 ## Table loading priorities
 
-You can specify the loading order of tables and their migrations using the `priority: number` property. This property influences the order in which the tables are loaded and their migrations are executed. 
+You can specify the loading order of tables and their migrations using the `priority: number` property. This property influences the order in which the tables are loaded and their migrations are executed.
 
 ### Example of setting priority
 
@@ -158,13 +168,3 @@ export default new Table<User>({
   },
 });
 ```
-
-## About database configuration
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
