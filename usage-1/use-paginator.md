@@ -21,7 +21,7 @@ const pages = [
 ] as const
 
 const staticPaginator = new StaticPaginator({
-  channel: channel, // Your discord.js channel object
+  target: channel, // Your discord.js text channel or deferred interaction
   pages: pages, // Preloaded pages
   useReactions: true,
 })
@@ -42,7 +42,7 @@ The `DynamicPaginator` class is designed for scenarios where the content of the 
 import * as app from "#app"
 
 const dynamicPaginator = new app.DynamicPaginator({
-  channel: channel, // Your discord.js channel object
+  target: channel, // Your discord.js text channel or deferred interaction
   async fetchPage(index) {
     // Fetch or generate the content for the page at the given index
     return { content: `Page ${index + 1}` }
