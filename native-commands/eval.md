@@ -54,7 +54,7 @@ If your code contains `async/await`, it works at top level like on Deno!
 ## Arguments
 
 {% hint style="warning" %}
-Check the [Command](../usage-1/create-a-command.md)/[Arguments](../usage-1/create-a-command.md#arguments) section if you have a problem.
+Check the [Command](../usage/create-a-command.md)/[Arguments](../usage/create-a-command.md#arguments) section if you have a problem.
 {% endhint %}
 
 ### --use
