@@ -1,7 +1,3 @@
----
-description: This section covers utilities for handling dates and durations using the `dayjs` library and the `tims` package. These tools allow you to manage time zones, format dates, and perform various date-related calculations easily.
----
-
 # Dates and Durations
 
 This section covers utilities for handling dates and durations using the `dayjs` library and the `tims` package. These tools allow you to manage time zones, format dates, and perform various date-related calculations easily.

@@ -3,10 +3,7 @@ description: >-
   This section contains utilities to manage file paths and URLs within your project, ensuring consistent path generation from the project root and handling Git URLs for files.
 ---
 
-
 # Paths and URLs
-
-This section contains utilities to manage file paths and URLs within your project, ensuring consistent path generation from the project root and handling Git URLs for files.
 
 ---
 

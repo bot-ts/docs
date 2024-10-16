@@ -2,10 +2,7 @@
 description: This page provides an overview of additional utility functions and types that are exported for use in your application.
 ---
 
-
 # Other Utilities
-
-This section provides an overview of additional utility functions and types that are exported for use in your application.
 
 ---
 

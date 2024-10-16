@@ -5,8 +5,6 @@ description: >-
 
 # Texts Utilities
 
-This section provides a set of useful functions to manage and format text data, including truncating long strings, ensuring text fits specific sizes, and managing system messages with emojis and colors.
-
 ---
 
 ## `limitDataToShow`

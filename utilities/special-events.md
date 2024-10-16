@@ -1,11 +1,8 @@
 ---
-description: Manage special events using a custom event emitter in Discord, allowing you to create and manage events efficiently without relying on the default client events.
+description: This section outlines the utilities for managing special events using a custom event emitter in Discord. It allows you to create and manage events efficiently without relying on the default client events, making it ideal for "quick & once" use cases.
 ---
 
 # Special Events
-
-This section outlines the utilities for managing special events using a custom event emitter in Discord. It allows you to create and manage events efficiently without relying on the default client events, making it ideal for "quick & once" use cases.
-
 
 ## `messageEmitter`
 
