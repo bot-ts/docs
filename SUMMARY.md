@@ -19,14 +19,15 @@
 * [Readme](command-line/readme.md)
 * [Final](command-line/final.md)
 
-## Usage <a href="#usage-1" id="usage-1"></a>
+## Usage
 
-* [Command](usage-1/create-a-command.md)
-* [Listener](usage-1/create-a-listener.md)
-* [Namespace](usage-1/create-a-namespace.md)
-* [Logger](usage-1/use-logger.md)
-* [Paginator](usage-1/use-paginator.md)
-* [Database](usage-1/use-database.md)
+* [Command](usage/create-a-command.md)
+* [Listener](usage/create-a-listener.md)
+* [Namespace](usage/create-a-namespace.md)
+* [Logger](usage/use-logger.md)
+* [Paginator](usage/use-paginator.md)
+* [Database](usage/use-database.md)
+* [Caching](usage/use-caching.md)
 
 ## Native commands
 
@@ -40,6 +41,14 @@
 ## Command examples
 
 * [Prefix](command-examples/prefix.md)
+
+## Utilities
+
+* [Texts](utilities/texts.md)
+* [Paths and URLs](utilities/paths-and-urls.md)
+* [Dates and durations](utilities/dates-and-durations.md)
+* [Special events](utilities/special-events.md)
+* [Other](utilities/other.md)
 
 ## Deployment
 

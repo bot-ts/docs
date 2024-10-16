@@ -1,3 +1,7 @@
+---
+description: Powerful logging utilities to enhance your server terminal output.
+---
+
 # Logger
 
 ## Use the default logger
@@ -18,7 +22,7 @@ try {
 
 You can also uses the other methods of logging like `app.log()` for default informative logs, `app.warn()` for warning logs and `app.success()` for congratulations.
 
-## Use a categorized logger
+## Create a logger namespace
 
 If you need a logger for a specific behavior or theme, you can create one using the class present in the [@ghom/logger](https://www.npmjs.com/package/@ghom/logger) lib. For example in a namespace supposed to represent a websocket exchange:
 
@@ -33,3 +37,22 @@ export function wsInit() {
     logger.log("Successfuly initialized")
 }
 ```
+
+## Update the default system logger configuration
+
+You can update the default logger configuration by modifying the `logger` property in your `src/config.ts` file. Here is an example of a configuration that removes the logger styles:
+
+```typescript
+import { Config } from "#src/app/config.ts"
+
+export const config = new Config({
+  // ...
+  logger: {
+    pattern: (text, _config, secondaryText) => `${text} - ${secondaryText}`,
+  }
+})
+
+export default config.options
+```
+
+
