@@ -23,6 +23,7 @@
 
 * [Command](usage/create-a-command.md)
 * [Listener](usage/create-a-listener.md)
+* [Button](usage/create-a-button.md)
 * [Namespace](usage/create-a-namespace.md)
 * [Logger](usage/use-logger.md)
 * [Paginator](usage/use-paginator.md)
@@ -53,7 +54,7 @@
 ## Deployment
 
 * [Production](deployment/production.md)
-* [Developpment](deployment/developpment.md)
+* [Development](deployment/developpment.md)
 
 ## Contributing
 
