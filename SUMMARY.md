@@ -25,6 +25,7 @@
 * [Listener](usage/create-a-listener.md)
 * [Button](usage/create-a-button.md)
 * [Namespace](usage/create-a-namespace.md)
+* [Cron](usage/create-a-cron.md)
 * [Logger](usage/use-logger.md)
 * [Paginator](usage/use-paginator.md)
 * [Database](usage/use-database.md)
