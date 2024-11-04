@@ -38,7 +38,10 @@ Once the button is created, you can define any parameters the button will receiv
 ```typescript
 import * as app from "#app"
 
-export type BuyButtonParams = [article: string, quantity: number]
+export type BuyButtonParams = {
+  article: string
+  quantity: number
+}
 
 export default new app.Button<BuyButtonParams>({
   key: "buy",
@@ -67,13 +70,11 @@ import buyButton from "#buttons/buy.ts"
 await channel.send({
   components: [
     new app.ActionRowBuilder<discord.MessageActionRowComponentBuilder>().addComponents(
-      buyButton.create("article 1", 3)
+      buyButton.create({ article: "article 1", quantity: 3 })
     )
   ]
 })
 ```
-
-In this example, the `buyButton.create("article 1", 3)` call generates a button for "article 1" with a quantity of 3.
 
 You can also use the button from an external function:
 
@@ -84,7 +85,10 @@ import buyButton from "#buttons/buy.ts"
 await channel.send({
   components: [
     new app.ActionRowBuilder<discord.MessageActionRowComponentBuilder>().addComponents(
-      app.createButton(buyButton, "article 1", 3)
+      app.createButton(buyButton, { 
+        article: "article 1", 
+        quantity: 3 
+      })
     )
   ]
 })
