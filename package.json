@@ -5,10 +5,13 @@
   "description": "Documentation for @ghom/bot.ts",
   "scripts": {
     "readme": "node update-readme.js",
-    "format": "prettier --write update-readme.js"
+    "format": "prettier --write update-readme.js ./**/*.md"
   },
   "devDependencies": {
     "axios": "^1.6.0",
     "prettier": "^3.0.3"
+  },
+  "prettier": {
+    "semi": false
   }
 }

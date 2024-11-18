@@ -9,6 +9,25 @@ description: You can use Docker to launch your app in a container!
 To streamline the deployment of your bot created with the bot.ts framework, you can use Docker. Docker allows you to encapsulate your application within a lightweight, portable container. The `Dockerfile` provided below sets up the necessary environment to run your bot. It uses a Node.js base image, copies your application files into the container, installs the dependencies, and configures the container to start your bot. To launch the Docker container, navigate to the directory containing your `Dockerfile` and execute the command `docker build -t <bot_name> .` to build the image, followed by `docker run -d <bot_name>` to run the container.
 
 ```docker
+FROM oven/bun:latest
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN bun install
+
+COPY . .
+
+# Rebuild les dépendances natives
+RUN bun run rebuild sqlite3 || true
+
+CMD ["bun", "run", "start"]
+```
+
+### With Node container
+
+```docker
 FROM node:lts
 
 WORKDIR /app

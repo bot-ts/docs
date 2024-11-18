@@ -12,35 +12,6 @@ You must use the [CLI](https://www.npmjs.com/package/make-bot.ts) to create your
 
 ### CLI pattern
 
-By typing `bot add namespace -h` you will get this following information.
-
 ```bash
-bot add namespace <name>
-
-Positionals:
-  name       # command name                                             [required]
-
-Options:
-  --version  # Show version number                                       [boolean]
-  --help     # Show help                                                 [boolean]
-```
-
-## Remove a namespace
-
-You must use the [CLI](https://www.npmjs.com/package/make-bot.ts) to remove your created namespaces to automatically remove the links between `app.ts` and your namespace.
-
-### CLI pattern
-
-By typing `bot remove namespace -h` you will get this following information.
-
-```bash
-bot remove namespace <name>
-
-Positionals:
-  name       # namespace name                                  [string] [required]
-
-Options:
-  --version  # Show version number                                       [boolean]
-  --help     # Show help                                                 [boolean]
-
+bot add namespace
 ```

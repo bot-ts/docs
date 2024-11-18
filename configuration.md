@@ -4,6 +4,8 @@ description: Everything you need to know about the bot's configuration file.
 
 # Configuration
 
+## Switch engine
+
 ## Custom system message
 
 You can create your own system message template from the configuration file.&#x20;

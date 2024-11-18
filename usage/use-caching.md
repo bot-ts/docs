@@ -43,15 +43,20 @@ Create a new ResponseCache for a slow SQL query in a `src/namespaces/players.ts`
 ```ts
 // src/namespaces/players.ts
 
-import playerTable from "#tables/players.ts"
+import playerTable from "#tables/players"
 
 /**
  * Cache for storing ready players in a guild, refreshed every 10 minutes if consulted.
  */
-export const guildReadyPlayers = new app.ResponseCache(async (guildId: string) => {
-  // Select all players that are ready in the guild
-  return await playerTable.query.where("guildId", guildId).andWhere("ready", true)
-}, 600_000)
+export const guildReadyPlayers = new app.ResponseCache(
+  async (guildId: string) => {
+    // Select all players that are ready in the guild
+    return await playerTable.query
+      .where("guildId", guildId)
+      .andWhere("ready", true)
+  },
+  600_000,
+)
 
 /**
  * Get the list of ready players in a guild (using the cache to optimize queries).
@@ -63,11 +68,18 @@ export async function getReadyPlayers(guildId: string) {
 /**
  * Update the ready status of a player in a guild and refresh the guild's cache.
  */
-export async function setPlayerReady(guildId: string, playerId: string, ready: boolean) {
-  await playerTable.query.where("guildId", guildId).andWhere("id", playerId).update({ ready })
-  
+export async function setPlayerReady(
+  guildId: string,
+  playerId: string,
+  ready: boolean,
+) {
+  await playerTable.query
+    .where("guildId", guildId)
+    .andWhere("id", playerId)
+    .update({ ready })
+
   // Force the cache to update.
-  // Each change in the players table should be succeeded by a <ReponseCache>.fetch() call 
+  // Each change in the players table should be succeeded by a <ReponseCache>.fetch() call
   //  to preserve the integrity of the cache data.
   await guildReadyPlayers.fetch(guildId)
 }

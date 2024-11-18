@@ -12,20 +12,35 @@ It uses esbuild so **it ignores TypeScript type checking**! You must use the [te
 
 {% tabs %}
 {% tab title="npm" %}
+
 ```bash
 npm run build
 ```
+
 {% endtab %}
 
 {% tab title="Yarn" %}
+
 ```bash
 yarn build
 ```
+
 {% endtab %}
 
-{% tab title="Gulp" %}
+{% tab title="pnpm" %}
+
 ```bash
-gulp build
+pnpm build
 ```
+
 {% endtab %}
+
+{% tab title="Bun" %}
+
+```bash
+bun run build
+```
+
+{% endtab %}
+
 {% endtabs %}

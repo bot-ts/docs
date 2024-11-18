@@ -16,20 +16,26 @@ This is a beta feature, it can be broken!
 
 {% tabs %}
 {% tab title="npm" %}
+
 ```bash
 npm run readme
 ```
+
 {% endtab %}
 
 {% tab title="yarn" %}
+
 ```bash
 yarn readme
 ```
+
 {% endtab %}
 
-{% tab title="gulp" %}
+{% tab title="Bun" %}
+
 ```bash
-gulp readme
+bun run readme
 ```
+
 {% endtab %}
 {% endtabs %}

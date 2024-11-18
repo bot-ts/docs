@@ -6,18 +6,18 @@ The `StaticPaginator` class is ideal for scenarios where the content of all page
 
 ### Key features
 
-* **Preloaded Content**: Stores all pages in memory, allowing for quick access and navigation.
-* **Simple Implementation**: Easy to use when the total number of pages and their content are known in advance.
+- **Preloaded Content**: Stores all pages in memory, allowing for quick access and navigation.
+- **Simple Implementation**: Easy to use when the total number of pages and their content are known in advance.
 
 ### Exemple
 
 ```typescript
-import * as app from "#app"
+import { StaticPaginator } from "#core/pagination"
 
 const pages = [
-  { content: 'Page 1' },
-  { content: 'Page 2' },
-  { content: 'Page 3' },
+  { content: "Page 1" },
+  { content: "Page 2" },
+  { content: "Page 3" },
 ] as const
 
 const staticPaginator = new StaticPaginator({
@@ -33,15 +33,15 @@ The `DynamicPaginator` class is designed for scenarios where the content of the 
 
 ### Key features
 
-* **Dynamic Content Loading**: Fetches pages as needed, rather than storing all pages in memory.
-* **Asynchronous Operations**: Supports async functions to retrieve page content and count, making it suitable for dynamic data sources.
+- **Dynamic Content Loading**: Fetches pages as needed, rather than storing all pages in memory.
+- **Asynchronous Operations**: Supports async functions to retrieve page content and count, making it suitable for dynamic data sources.
 
 ### Example
 
 ```typescript
-import * as app from "#app"
+import { DynamicPaginator } from "#core/pagination"
 
-const dynamicPaginator = new app.DynamicPaginator({
+const dynamicPaginator = new DynamicPaginator({
   target: channel, // Your discord.js text channel or deferred interaction
   async fetchPage(index) {
     // Fetch or generate the content for the page at the given index
@@ -49,7 +49,7 @@ const dynamicPaginator = new app.DynamicPaginator({
   },
   async fetchPageCount() {
     // Return the total number of pages available
-    return 10;
+    return 10
   },
   useReactions: true,
 })

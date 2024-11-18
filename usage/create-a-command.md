@@ -6,28 +6,9 @@ To create a command it is recommended to use the [CLI](https://www.npmjs.com/pac
 
 ### CLI pattern
 
-By typing `bot add command -h` you will get this following information.
-
 ```bash
-bot add command <name>
-
-Positionals:
-  name       # command name                                             [required]
-
-Options:
-  --version  # Show version number                                       [boolean]
-  --help     # Show help                                                 [boolean]
+bot add command
 ```
-
-### Example
-
-For a "ping" command, type the following command.
-
-```bash
-bot add command "ping"
-```
-
-Then, the `src/commands/ping.ts` file will be ready to be implemented.
 
 ## Define message origin
 
@@ -35,29 +16,31 @@ Once your command is created, **If you want handle messages from GuildChannels o
 
 {% tabs %}
 {% tab title="GuildChannel only" %}
+
 ```typescript
-import * as app from "#app"
+import { Command } from "#core/command"
 
-export default new app.Command({
-
+export default new Command({
   channelType: "guild",
 
   // ...some properties
 })
 ```
+
 {% endtab %}
 
 {% tab title="DMChannel only" %}
+
 ```typescript
-import * as app from "#app"
+import { Command } from "#core/command"
 
-export default new app.Command({
-
+export default new Command({
   channelType: "dm",
 
   // ...some properties
 })
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -66,22 +49,22 @@ export default new app.Command({
 If you want to setup a cooldown, you simply need to add the coolDown property when you create the command, define the duration you want in milliseconds, and trigger the cooldown where you want in the command body. Example:
 
 ```typescript
-import * as app from "#app"
+import { Command, CooldownType } from "#core/command";
 
 const canAccessHourly: () => boolean = //...
 const processHourly: () => Promise = //...
 
-export default new app.Command({
+export default new Command({
   name: "hourly",
   cooldown: {
     duration: 1000 * 60 * 60, // 1 hour of cooldown
-    type: app.CooldownType.Global,
+    type: CooldownType.Global,
   },
   async run(message) {
     if(canAccessHourly()) {
       // trigger the cooldown only if hourly is triggered
-      message.triggerCoolDown() 
-      
+      message.triggerCoolDown()
+
       await processHourly()
     }
   }
@@ -97,7 +80,7 @@ If you forget the `message.triggerCoolDown()` in the command, a warn appear in s
 ALl command can have a lots of arguments. This framework considers that Discord bot commands should resemble Unix commands in their syntax. You will therefore find some similarities between CLIs and the commands of your Discord bot.
 
 {% hint style="warning" %}
-The  character **is not a valid argument separator**. If you want to break the line before putting an argument, add a space at the start of argument. ([issue#19](https://github.com/bot-ts/framework/issues/19#issue-1084182563))
+The character **is not a valid argument separator**. If you want to break the line before putting an argument, add a space at the start of argument. ([issue#19](https://github.com/bot-ts/framework/issues/19#issue-1084182563))
 {% endhint %}
 
 {% hint style="info" %}
@@ -113,9 +96,9 @@ There are three specific types of arguments based on the [Yargs](http://yargs.js
 The most common type of argument on Discord bots. It is used to define values according to their positioning in the command typed.
 
 ```typescript
-import * as app from "#app"
+import { Command } from "#core/command"
 
-export default new app.Command({
+export default new Command({
   name: "cmd",
   description: "A command",
   channelType: "all",
@@ -123,28 +106,28 @@ export default new app.Command({
     {
       name: "name",
       description: "A name positional",
-      type: "string"
-    }
+      type: "string",
+    },
   ],
   async run(message) {
     app.log(message.args.name) // string | null
-  }
+  },
 })
 ```
 
 The last code example will be used like that on Discord:
 
-* `!cmd "multiline value"`
-* `!cmd value`
-{% endtab %}
+- `!cmd "multiline value"`
+- `!cmd value`
+  {% endtab %}
 
 {% tab title="Option" %}
 This kind of argument is used for options, most often optional.
 
 ```typescript
-import * as app from "#app"
+import { Command } from "#core/command"
 
-export default new app.Command({
+export default new Command({
   name: "cmd",
   description: "A command",
   channelType: "all",
@@ -152,28 +135,28 @@ export default new app.Command({
     {
       name: "name",
       description: "A name option",
-      type: "string"
-    }
+      type: "string",
+    },
   ],
   async run(message) {
     app.log(message.args.name) // string | null
-  }
+  },
 })
 ```
 
 The last code example will be used like that on Discord:
 
-* `!cmd --name "multiline value"`
-* `!cmd --name value`
-{% endtab %}
+- `!cmd --name "multiline value"`
+- `!cmd --name value`
+  {% endtab %}
 
 {% tab title="Flag" %}
 The flag is an argument of type "present or not" which returns a boolean. You can also assign it values such as `on/off` or `1/0` or `true/false` or `Y/N`, it will always return a boolean.
 
 ```typescript
-import * as app from "#app"
+import { Command } from "#core/command"
 
-export default new app.Command({
+export default new Command({
   name: "cmd",
   description: "A command",
   channelType: "all",
@@ -181,12 +164,12 @@ export default new app.Command({
     {
       name: "named",
       flag: "n",
-      description: "Is named flag"
-    }
+      description: "Is named flag",
+    },
   ],
   async run(message) {
-    app.log(message.args.named) // true | false
-  }
+    console.log(message.args.named) // true | false
+  },
 })
 ```
 
@@ -198,35 +181,36 @@ The last code example will be used like that on Discord:
 | `!cmd --named`     | `true`          |
 | `!cmd -n`          | `true`          |
 | `!cmd`             | `false`         |
+
 {% endtab %}
 
 {% tab title="Rest" %}
 Represents all command text that was not passed as an argument.
 
 ```typescript
-import * as app from "#app"
+import { Command } from "#core/command"
 
-export default new app.Command({
+export default new Command({
   name: "cmd",
   description: "A command",
   channelType: "all",
   rest: {
     name: "name",
     description: "The rest of arguments",
-    required: true
+    required: true,
   },
   async run(message) {
-    app.log(message.args.name) // string
-  }
+    console.log(message.args.name) // string
+  },
 })
 ```
 
 The last code example will be used like that on Discord:
 
-* `!cmd multiline value`
-* `!cmd value`
-{% endtab %}
-{% endtabs %}
+- `!cmd multiline value`
+- `!cmd value`
+  {% endtab %}
+  {% endtabs %}
 
 ### Required arguments
 
@@ -239,9 +223,9 @@ Yout can use the `type` property to force a certain type of input and convert th
 For example if I want the user to mention a member as positional, and retrieve the `GuildMember` mentioned in the body of my command, I can use the `type` property like this:
 
 ```typescript
-import * as app from "#app"
+import { Command } from "#core/command"
 
-export default new app.Command({
+export default new Command({
   name: "cmd",
   description: "A command",
   channelType: "all",
@@ -250,35 +234,16 @@ export default new app.Command({
       name: "target",
       description: "The mentionned member",
       type: "member",
-      required: true
-    }
+      required: true,
+    },
   ],
   async run(message) {
-    app.log(message.args.target) // GuildMember
-  }
+    console.log(message.args.target) // GuildMember
+  },
 })
 ```
 
-Here is a list of keys that you can use as values for the `type` property, along with the associated conversion types. I present it to you as it is in the source code because it is a simple interface.
-
-```typescript
-export interface ArgumentValues {
-  "number": number
-  "date": Date
-  "json": object
-  "boolean": boolean
-  "regex": RegExp
-  "array": Array<string>
-  "user": discord.User
-  "member": discord.GuildMember
-  "channel": discord.AnyChannel
-  "message": discord.Message
-  "role": discord.Role
-  "emote": discord.GuildEmoji | string
-  "invite": discord.Invite
-  "command": command.Command<keyof command.CommandMessageType>
-}
-```
+All types are available in `src/types.ts`, and you can add custom types there. Please refer to the types file for an exhaustive list of existing types.
 
 ## Middlewares
 

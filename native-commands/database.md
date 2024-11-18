@@ -6,7 +6,7 @@ description: Advanced database command for executing SQL queries and managing da
 
 ## Description
 
-The `database` command allows the bot owner to run SQL queries directly on the bot's database. This can be useful for testing, debugging, or managing data within the server. 
+The `database` command allows the bot owner to run SQL queries directly on the bot's database. This can be useful for testing, debugging, or managing data within the server.
 
 ## Command Pattern
 
@@ -105,4 +105,4 @@ The `plan` subcommand shows the database schema, including the table names, colu
 
 ## Annexes
 
-* [Command file](https://github.com/bot-ts/framework/blob/master/src/commands/database.native.ts)
+- [Command file](https://github.com/bot-ts/framework/blob/master/src/commands/database.native.ts)

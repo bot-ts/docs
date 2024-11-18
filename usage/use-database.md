@@ -10,35 +10,9 @@ To configure the database for your application, it is recommended to use the [CL
 
 ### CLI pattern
 
-Typing `bot set database -h` will provide you with the following information:
-
 ```bash
-bot set database <database>
-
-setup database
-
-Arguments positionnels :
-  database  used database
-             [chaîne de caractères] [requis] [choix : "sqlite3", "mysql2", "pg"]
-
-Options :
-      --help            Affiche l'aide                                 [booléen]
-  -h, --host            database host                     [défaut : "localhost"]
-      --port            database port                     [chaîne de caractères]
-  -u, --user            database user                     [chaîne de caractères]
-      --password, --pw  database password                 [chaîne de caractères]
-      --dbname, --db    database name                     [chaîne de caractères]
+bot config database
 ```
-
-### Example
-
-To set up PostgreSQL as your database and update the connexion configuration for localhost:5432 with the user `postgres` and `mypassword` as password, type the following command:
-
-```bash
-bot set database pg --password "mypassword"
-```
-
-This command updates the `src/app/database.ts` file, installs the necessary dependencies and update the `.env` connexion configuration.
 
 ## Create a table
 
@@ -46,29 +20,9 @@ To create a new table, you can use the following command, which will generate a 
 
 ### CLI pattern
 
-Typing `bot add table -h` will show you the following information:
-
 ```bash
-bot add table <name>
-
-create a database table
-
-Arguments positionnels :
-  name  table name                               [chaîne de caractères] [requis]
-
-Options :
-  --help     Affiche l'aide                                            [booléen]
+bot add table
 ```
-
-### Example
-
-To create a table named `users`, you would type:
-
-```bash
-bot add table "users"
-```
-
-After running this command, you will need to manually configure the columns and typing by creating a TypeScript interface and passing it as a generic type.
 
 ### Example of table configuration
 
@@ -90,8 +44,8 @@ export default new Table<User>({
     table.increments("id").primary()
     table.string("name")
     table.string("email").notNullable()
-  }
-});
+  },
+})
 ```
 
 ## About Knex and ORM usage
@@ -105,19 +59,19 @@ Access to the Knex documentation here: [https://knexjs.org/guide/](https://knexj
 To use your newly created table in a command, you can launch a typed Knex query with the `<Table>.query` property.
 
 ```typescript
-import * as app from "#app";
-import usersTable from "#tables/users.ts";
+import { SlashCommand } from "#core/slash"
+import usersTable from "#tables/users"
 
-export default new app.SlashCommand({
+export default new SlashCommand({
   name: "test",
   description: "A test command to query the users table",
   async run(interaction) {
     // equivalent of sql`SELECT * FROM users WHERE name = "John" LIMIT 1`[0]
-    const user = await usersTable.query.where("name", "John").first();
-    
+    const user = await usersTable.query.where("name", "John").first()
+
     return interaction.reply({ content: JSON.stringify(user) })
   },
-});
+})
 ```
 
 ## Migrations
@@ -142,13 +96,13 @@ export default new Table<User>({
   },
   migrations: {
     1: (table) => {
-      table.string("profile_picture").nullable();
+      table.string("profile_picture").nullable()
     },
     2: (tableBuilder) => {
-      table.dropColumn("profile_picture");
+      table.dropColumn("profile_picture")
     },
   },
-});
+})
 ```
 
 ## Table loading priorities
@@ -166,5 +120,5 @@ export default new Table<User>({
     table.string("name")
     table.string("email").notNullable()
   },
-});
+})
 ```

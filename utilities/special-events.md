@@ -15,14 +15,16 @@ An instance of `EventEmitter` specifically designed to handle message events.
 The `onceMessage` function allows you to register a callback for a specific event that will only be executed once. After it is triggered, it will be removed automatically.
 
 ### Parameters:
+
 - **`emitter`**: The specific event emitter (from `EventEmitters`).
 - **`cb`**: The callback function to execute when the event is emitted.
 
 ### Example:
+
 ```ts
 onceMessage("messageCreate", (message) => {
-  console.log(`Message received: ${message.content}`);
-});
+  console.log(`Message received: ${message.content}`)
+})
 ```
 
 ---
@@ -32,10 +34,11 @@ onceMessage("messageCreate", (message) => {
 The `MoreClientEvents` interface extends the default Discord client events by adding custom events, such as `raw` and `afterReady`.
 
 ### Example:
+
 ```ts
 export interface MoreClientEvents {
-  raw: [packet: apiTypes.GatewayDispatchPayload];
-  afterReady: [discord.Client<true>]; // Wait for all "ready" asyncronous listeners before triggering
+  raw: [packet: apiTypes.GatewayDispatchPayload]
+  afterReady: [discord.Client<true>] // Wait for all "ready" asyncronous listeners before triggering
 }
 ```
 

@@ -15,7 +15,7 @@ The package used by this command to resolve the code is on npm as [discord-eval.
 In the Discord server where you invited the bot, use the following command pattern in a channel accessible by the bot.
 
 ```bash
-.eval <code> [--muted: <boolean>] [--use: <Array<string>>]
+.eval <code> [--muted: <boolean>]
 ```
 
 For example:
@@ -57,17 +57,6 @@ If your code contains `async/await`, it works at top level like on Deno!
 Check the [Command](../usage/create-a-command.md)/[Arguments](../usage/create-a-command.md#arguments) section if you have a problem.
 {% endhint %}
 
-### --use
-
-You can install and use NPM packages in your eval with the `--use` argument. You can then use the imported packages via the `req` object. the NPM packages are removed after the command.
-
-```bash
-.eval --use prettier,esbuild,make-bot.ts
-req.prettier // ok
-req["make-bot.ts"] // ok
-return 42 + "0"
-```
-
 ### --muted
 
 If you want to run your code in silence, use the `--muted` flag (or just `-m`).
@@ -79,5 +68,5 @@ return 42 + "0"
 
 ## Annexes
 
-* [Command file](https://github.com/bot-ts/framework/blob/master/src/commands/eval.native.ts)
-* [discord-eval.ts](https://www.npmjs.com/package/discord-eval.ts)
+- [Command file](https://github.com/bot-ts/framework/blob/master/src/commands/eval.native.ts)
+- [discord-eval.ts](https://www.npmjs.com/package/discord-eval.ts)

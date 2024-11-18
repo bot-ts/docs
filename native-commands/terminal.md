@@ -80,4 +80,4 @@ If an error occurs, an error message with the error details is displayed.
 
 ## Annexes
 
-* [Command file](https://github.com/bot-ts/framework/blob/master/src/commands/terminal.native.ts)
+- [Command file](https://github.com/bot-ts/framework/blob/master/src/commands/terminal.native.ts)

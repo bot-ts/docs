@@ -4,5 +4,8 @@ description: How to develop with bot.ts?
 
 # Developpment
 
-## Local configuration
+{% hint style="warning" %}
+The documentation is currently being produced.
+{% endhint %}
 
+## Local configuration

@@ -6,30 +6,9 @@ To create a scheduled task in your bot, also called a CRON job, use the CLI to s
 
 ### CLI Pattern
 
-You can see the CLI usage by typing `bot add cron -h`, which will return the following information:
-
 ```bash
-bot add cron <name>
-
-Positionals:
-  name  cron name                                                    [required]
-
-Options:
-  --version  Show version number                                       [boolean]
-  --help     Show help                                                 [boolean]
+bot add cron
 ```
-
-### Example
-
-To create a job named "daily-report", type the following command:
-
-```bash
-bot add cron "dailyReport"
-```
-
-This command will generate a file in `src/cron/dailyReport.ts`, which you can then configure with your desired schedule and functionality.
-
----
 
 ## Scheduling the Task
 
@@ -49,9 +28,9 @@ These keys represent common intervals and simplify the scheduling process. Choos
 #### Example:
 
 ```typescript
-import * as app from "#app"
+import { Cron } from "#core/cron"
 
-export default new app.Cron({
+export default new Cron({
   name: "dailyReport",
   description: "Generates a daily report",
   schedule: "daily", // runs every day
@@ -73,9 +52,9 @@ Define a custom interval for any unit of time with the following properties:
 #### Example:
 
 ```typescript
-import * as app from "#app"
+import { Cron } from "#core/cron"
 
-export default new app.Cron({
+export default new Cron({
   name: "reminder-every-3-days",
   description: "Sends a reminder every three days",
   schedule: { type: "day", duration: 3 }, // runs every 3 days
@@ -91,24 +70,24 @@ export default new app.Cron({
 
 For more precise control over the timing, use the following properties:
 
-- **minute**: (0-59 or "*")
-- **hour**: (0-23 or "*")
-- **dayOfMonth**: (1-31 or "*")
-- **month**: (1-12 or CronMonth enum or "*")
-- **dayOfWeek**: (0-6 or CronDayOfWeek enum or "*")
+- **minute**: (0-59 or "\*")
+- **hour**: (0-23 or "\*")
+- **dayOfMonth**: (1-31 or "\*")
+- **month**: (1-12 or CronMonth enum or "\*")
+- **dayOfWeek**: (0-6 or CronDayOfWeek enum or "\*")
 
 #### Example:
 
 ```typescript
-import * as app from "#app"
+import { Cron, CronDayOfWeek } from "#core/cron"
 
-export default new app.Cron({
+export default new Cron({
   name: "weekend-check",
   description: "Runs every Saturday at 10:00 AM",
   schedule: {
     minute: 0,
     hour: 10,
-    dayOfWeek: app.CronDayOfWeek.Saturday,
+    dayOfWeek: CronDayOfWeek.Saturday,
   },
   async run() {
     // todo: code here
@@ -125,9 +104,9 @@ If you want your CRON job to run immediately when the bot starts, set the `runOn
 #### Example:
 
 ```typescript
-import * as app from "#app"
+import { Cron } from "#core/cron"
 
-export default new app.Cron({
+export default new Cron({
   name: "startup-check",
   description: "Runs on startup and then hourly",
   schedule: "hourly",
@@ -177,12 +156,14 @@ export class Cron {
 ```
 
 ### Properties
+
 - **`task`**: Holds the scheduled task instance.
 - **`native`**: Indicates whether the CRON job is a native task.
 - **`filepath`**: Optional, stores the path to the CRON file.
 - **`ranCount`**: Counts how many times the task has run.
 
 ### Methods
+
 - **`start()`**: Starts the scheduled task based on the defined `schedule`.
 - **`stop()`**: Stops the scheduled task.
 

@@ -54,4 +54,4 @@ The output includes the following sections:
 
 ## Annexes
 
-* [Command file](https://github.com/bot-ts/framework/blob/master/src/commands/info.native.ts)
+- [Command file](https://github.com/bot-ts/framework/blob/master/src/commands/info.native.ts)

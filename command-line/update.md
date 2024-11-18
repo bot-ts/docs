@@ -12,21 +12,27 @@ description: The bot.ts core files updater command.
 
 {% tabs %}
 {% tab title="npm" %}
+
 ```bash
 npm run update
 ```
+
 {% endtab %}
 
 {% tab title="Yarn" %}
+
 ```bash
 yarn update
 ```
+
 {% endtab %}
 
-{% tab title="Gulp" %}
+{% tab title="Bun" %}
+
 ```bash
-gulp update
+bun run update
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -39,7 +45,6 @@ Here is a list of special files that will always be updated.
 ```bash
 .gitattributes
 .gitignore
-Gulpfile.js
 tsconfig.json
 src/index.ts
 ```

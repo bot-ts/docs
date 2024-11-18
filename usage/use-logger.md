@@ -9,14 +9,14 @@ description: Powerful logging utilities to enhance your server terminal output.
 You can use the logger provided in "app" to create simple logs in the server terminal while remaining in the system logger theme. For example in a command where one of the actions may be problematic, you can do this:
 
 ```typescript
-import * as app from "#app"
+import logger from "#core/logger"
 
 // ...
 
 try {
-    // some problematic action
-} catch(error) {
-    app.error(error as Error)
+  // some problematic action
+} catch (error) {
+  logger.error(error as Error)
 }
 ```
 
@@ -27,14 +27,14 @@ You can also uses the other methods of logging like `app.log()` for default info
 If you need a logger for a specific behavior or theme, you can create one using the class present in the [@ghom/logger](https://www.npmjs.com/package/@ghom/logger) lib. For example in a namespace supposed to represent a websocket exchange:
 
 ```typescript
-import * as app from "#app"
+import { Logger } from "#core/logger"
 
-const logger = new app.Logger({ section: "websocket" })
+const logger = new Logger({ section: "websocket" })
 
 export function wsInit() {
-    // init websoclet connection...
-    
-    logger.log("Successfuly initialized")
+  // init websoclet connection...
+
+  logger.log("Successfuly initialized")
 }
 ```
 
@@ -43,16 +43,14 @@ export function wsInit() {
 You can update the default logger configuration by modifying the `logger` property in your `src/config.ts` file. Here is an example of a configuration that removes the logger styles:
 
 ```typescript
-import { Config } from "#src/app/config.ts"
+import { Config } from "#core/config"
 
 export const config = new Config({
   // ...
   logger: {
     pattern: (text, _config, secondaryText) => `${text} - ${secondaryText}`,
-  }
+  },
 })
 
 export default config.options
 ```
-
-

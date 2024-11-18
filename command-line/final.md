@@ -10,20 +10,18 @@ description: >-
 
 {% tabs %}
 {% tab title="npm" %}
+
 ```bash
 npm run final
 ```
+
 {% endtab %}
 
 {% tab title="Yarn" %}
+
 ```bash
 yarn final
 ```
-{% endtab %}
 
-{% tab title="Gulp" %}
-```bash
-gulp final
-```
 {% endtab %}
 {% endtabs %}

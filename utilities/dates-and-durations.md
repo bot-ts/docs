@@ -32,10 +32,11 @@ The following plugins are extended in `dayjs` to enhance its capabilities:
 You can now utilize `dayjs` for various date manipulations and formatting:
 
 ### Example:
+
 ```ts
-const now = dayjs(); // Current date and time
-const formatted = now.format("YYYY-MM-DD HH:mm:ss"); // Format date
-const utcDate = dayjs.utc(1); // Create a UTC date
+const now = dayjs() // Current date and time
+const formatted = now.format("YYYY-MM-DD HH:mm:ss") // Format date
+const utcDate = dayjs.utc(1) // Create a UTC date
 ```
 
 ---
@@ -45,10 +46,11 @@ const utcDate = dayjs.utc(1); // Create a UTC date
 In addition to `dayjs`, all exports from the `tims` package are available. This package provides additional utilities for displaying and calculating durations.
 
 ### Example:
-```ts
-import { since } from "tims";
 
-const durationText = since(new Date(2022, 1, 1)); // "2 months ago"
+```ts
+import { since } from "tims"
+
+const durationText = since(new Date(2022, 1, 1)) // "2 months ago"
 ```
 
 ---
@@ -66,8 +68,9 @@ export function uptime(): number {
 ```
 
 ### Example:
+
 ```ts
-import * as app from "#app"
+import * as util from "#core/util"
 
 function sendTheUptime(channel: app.SendableChannels) {
   return app.duration(app.uptime())

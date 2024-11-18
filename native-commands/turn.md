@@ -62,4 +62,4 @@ The output confirms whether command handling has been activated or disabled.
 
 ## Annexes
 
-* [Command file](https://github.com/bot-ts/framework/blob/master/src/commands/turn.native.ts)
+- [Command file](https://github.com/bot-ts/framework/blob/master/src/commands/turn.native.ts)

@@ -8,15 +8,35 @@ description: Series of build and run.
 
 {% tabs %}
 {% tab title="npm" %}
+
 ```bash
 npm run start
 ```
+
 {% endtab %}
 
 {% tab title="Yarn" %}
+
 ```bash
 yarn start
 ```
+
+{% endtab %}
+
+{% tab title="Bun" %}
+
+```bash
+bun start
+```
+
+{% endtab %}
+
+{% tab title="Deno" %}
+
+```bash
+deno src/index.ts
+```
+
 {% endtab %}
 {% endtabs %}
 

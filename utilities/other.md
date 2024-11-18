@@ -4,14 +4,8 @@ description: This page provides an overview of additional utility functions and 
 
 # Other Utilities
 
----
-
-## Exported Utilities
-
-The following utilities are exported from the `util` module:
-
-```ts
-export { styleText, promisify, inspect } from "util";
+```typescript
+import * as util from "#core/util"
 ```
 
 ---
@@ -21,7 +15,7 @@ export { styleText, promisify, inspect } from "util";
 The `PermissionsNames` type represents the keys of the `PermissionFlagsBits` object from Discord v10, allowing for type-safe permission handling.
 
 ```ts
-export type PermissionsNames = keyof typeof v10.PermissionFlagsBits;
+export type PermissionsNames = keyof typeof v10.PermissionFlagsBits
 ```
 
 ---
@@ -31,6 +25,7 @@ export type PermissionsNames = keyof typeof v10.PermissionFlagsBits;
 The `divider` function is used to split an array into smaller sections based on a specified number of items per division.
 
 ### Type signature:
+
 ```ts
 export function divider<T, Out>(
   items: T[],
@@ -40,10 +35,11 @@ export function divider<T, Out>(
 ```
 
 ### Example:
-```ts
-const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const dividedItems = await divider(items, 3);
+```ts
+const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+const dividedItems = await divider(items, 3)
 ```
 
 ---
@@ -53,6 +49,7 @@ const dividedItems = await divider(items, 3);
 The `whileLoop` function provides a mechanism to execute a loop based on a set of conditions. It continuously calls the iteration function until the conditions are met.
 
 ### Parameters:
+
 - **`options`**: An object containing the following properties:
   - `resolveValue`: A function to resolve the current value.
   - `canIterate`: A condition function to determine if the loop should continue.
@@ -60,27 +57,28 @@ The `whileLoop` function provides a mechanism to execute a loop based on a set o
   - `after`: An optional function to call after the loop finishes.
 
 ### Source:
+
 ```ts
 export async function whileLoop<Value>(options: {
-  resolveValue: (index: number) => Promise<Value>;
-  canIterate: (value: Value, tick: number) => boolean;
-  iteration: (value: Value, tick: number) => unknown;
-  after?: (value: Value, ticks: number) => unknown;
+  resolveValue: (index: number) => Promise<Value>
+  canIterate: (value: Value, tick: number) => boolean
+  iteration: (value: Value, tick: number) => unknown
+  after?: (value: Value, ticks: number) => unknown
 }): Promise<Value> {
-  const { resolveValue, canIterate, iteration } = options;
+  const { resolveValue, canIterate, iteration } = options
 
-  let value = await resolveValue(0);
-  let tick = 0;
+  let value = await resolveValue(0)
+  let tick = 0
 
   while (canIterate(value, tick)) {
-    iteration(value, tick);
-    value = await resolveValue(tick);
-    tick++;
+    iteration(value, tick)
+    value = await resolveValue(tick)
+    tick++
   }
 
-  options.after?.(value, tick);
+  options.after?.(value, tick)
 
-  return value;
+  return value
 }
 ```
 
@@ -91,18 +89,20 @@ export async function whileLoop<Value>(options: {
 The `scrap` function resolves a value that can either be a direct value or a function that returns a value.
 
 ### Parameters:
+
 - **`item`**: A resolvable item, either a value or a function.
 - **`...args`**: Parameters to pass to the function if it is resolvable.
 
 ### Example:
+
 ```ts
 const foo: Record<string, app.Scrap<number, [string]>> = {
   bar: (text: string) => 42 + text,
-  baz: 100
+  baz: 100,
 }
 
-const bar = scrap(foo.bar, "hello"); // 42
-const baz = scrap(foo.baz, "world"); // 100
+const bar = scrap(foo.bar, "hello") // 42
+const baz = scrap(foo.baz, "world") // 100
 ```
 
 ---
@@ -112,13 +112,15 @@ const baz = scrap(foo.baz, "world"); // 100
 The `omit` function creates a new object by excluding specified keys from the original object.
 
 ### Parameters:
+
 - **`item`**: The original object from which keys will be omitted.
 - **`...keys`**: The keys to be omitted.
 
 ### Example:
+
 ```ts
-const original = { a: 1, b: 2, c: 3 };
-const result = app.omit(original, "b");
+const original = { a: 1, b: 2, c: 3 }
+const result = app.omit(original, "b")
 // result: { a: 1, c: 3 }
 ```
 
@@ -129,13 +131,15 @@ const result = app.omit(original, "b");
 The `pick` function creates a new object by selecting specified keys from the original object.
 
 ### Parameters:
+
 - **`item`**: The original object from which keys will be picked.
 - **`...keys`**: The keys to be picked.
 
 ### Example:
+
 ```ts
-const original = { a: 1, b: 2, c: 3 };
-const result = app.pick(original, "a", "c");
+const original = { a: 1, b: 2, c: 3 }
+const result = app.pick(original, "a", "c")
 // result: { a: 1, c: 3 }
 ```
 
