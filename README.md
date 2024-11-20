@@ -55,10 +55,10 @@ description: Welcome to the bot.ts official documentation.
 
 Modern, intuitive, and easy to use. Choosing **Bot.ts** is choosing control.
 
-* It's not a lib! You can edit all files easily.
-* All is already configured.
-* I recommend it for learning TypeScript.
-* It is up to date with all technologies.
+- It's not a lib! You can edit all files easily.
+- All is already configured.
+- I recommend it for learning TypeScript.
+- It is up to date with all technologies.
 
 ## Hello World
 
@@ -66,11 +66,11 @@ Modern, intuitive, and easy to use. Choosing **Bot.ts** is choosing control.
 
 ## Annexes
 
-* [GitHub](https://github.com/bot-ts) - Come contribute 🩵
-* [Documentation](https://ghom.gitbook.io/bot-ts/)
-* [Package](https://www.npmjs.com/package/@ghom/bot.ts-cli) of CLI on NPM
-* [Discord](https://discord.gg/kYxDWWQJ8q) to track the progress of the project.
-* [Community](https://discord.gg/3vC2XWK) - Les Laboratoires JS
+- [GitHub](https://github.com/bot-ts) - Come contribute 🩵
+- [Documentation](https://ghom.gitbook.io/bot-ts/)
+- [Package](https://www.npmjs.com/package/@ghom/bot.ts-cli) of CLI on NPM
+- [Discord](https://discord.gg/kYxDWWQJ8q) to track the progress of the project.
+- [Community](https://discord.gg/3vC2XWK) - Les Laboratoires JS
 
 ## Funding
 

@@ -3,6 +3,7 @@
 - [Introduction](README.md)
 - [Installation](installation.md)
 - [Configuration](configuration.md)
+- [Migrate to v9](migrate-to-v9.md)
 - [Troubleshooting](troubleshooting.md)
 
 ## Command line
