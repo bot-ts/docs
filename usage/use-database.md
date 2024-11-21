@@ -29,7 +29,7 @@ bot add table
 Here’s an example of how to configure a table. Welcome to the `src/tables/users.ts` file:
 
 ```typescript
-import { Table } from "#database"
+import { Table } from "@ghom/orm"
 
 interface User {
   id: number
@@ -121,4 +121,77 @@ export default new Table<User>({
     table.string("email").notNullable()
   },
 })
+```
+
+## Interacting with your tables
+
+You can interact with your tables using the `<Table>.query` property. This property is a [Knex](https://knexjs.org/guide/) query builder that you can use to create complex queries.
+
+### Example of using the query builder
+
+```typescript
+// src/slash/me.ts
+
+import { SlashCommand } from "#core/slash"
+import usersTable from "#tables/users"
+
+export default new SlashCommand({
+  name: "me",
+  description: "Get your user data",
+  async run(interaction) {
+    const user = await usersTable.query.where("id", interaction.user.id).first()
+
+    if (!user) {
+      return interaction.reply({
+        content: "You are not registered in the database",
+      })
+    }
+
+    return interaction.reply({ content: JSON.stringify(user) })
+  },
+})
+```
+
+## Caching
+
+The ORM provides a built-in caching system that can be used to optimize slow queries. You can use the `<Table>.cache` property to cache the results of a query.
+
+### Setup the expiration time
+
+You can set up a global cache expiration time in the `src/config.ts` file and independently for each table in the table's `caching` option.
+
+```typescript
+export default new Table<User>({
+  name: "users",
+  caching: 600_000, // cache data for 10 minutes
+  setup: (table) => {
+    table.increments("id").primary()
+    table.string("name")
+    table.string("email").notNullable()
+  },
+})
+```
+
+### Example of using the built-in cache
+
+Here’s an example of how to use the built-in cache
+
+```typescript
+import usersTable from "#tables/users"
+
+/**
+ * Get the list of users with a specific name (using the cache to optimize queries).
+ */
+export async function getUsersByName(name: string) {
+  return await usersTable.cache.get(`name:${name}`, async (query) => {
+    return query.where("name", name)
+  })
+}
+
+/**
+ * Update the name of a user (and refresh the table's cache).
+ */
+export async function setUserName(id: number, name: string) {
+  await usersTable.cache.set((query) => query.where("id", id).update({ name }))
+}
 ```
