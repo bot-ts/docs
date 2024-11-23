@@ -30,6 +30,7 @@
 - [Paginator](usage/use-paginator.md)
 - [Database](usage/use-database.md)
 - [Caching](usage/use-caching.md)
+- [Custom types](usage/add-a-custom-type.md)
 
 ## Native commands
 
