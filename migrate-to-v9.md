@@ -68,7 +68,16 @@ Migrating ensures access to these advancements while maintaining compatibility w
 
 ---
 
-### 2. Install required packages
+### 2. Remove the ESBuild package
+
+- Remove the `esbuild` package from your project to prevent crashes:
+  ```bash
+  npm remove --purge @esbuild/linux-x64
+  ```
+
+---
+
+### 3. Install required packages
 
 - Install the following packages before running the update script:
   ```bash
@@ -77,7 +86,7 @@ Migrating ensures access to these advancements while maintaining compatibility w
 
 ---
 
-### 3. Download the required files
+### 4. Download the required files
 
 - Create a `scripts/` directory at the root of your bot project:
   ```bash
@@ -88,9 +97,9 @@ Migrating ensures access to these advancements while maintaining compatibility w
 
 ---
 
-### 4. Run the update script
+### 5. Run the update script
 
-- From the root of your bot project, run the update script:
+- From the root of your bot project, **in a bash terminal**, run the update script:
 
   ```bash
   node scripts/update-framework.js
@@ -98,21 +107,20 @@ Migrating ensures access to these advancements while maintaining compatibility w
 
 - This script will:
   - Update all native framework files.
-  - Add a new `src/core/` folder.
   - Install new dependencies required for the updated framework.
 
 ---
 
-### 5. Clean up old files
+### 6. Clean up old files
 
 - Delete the following files and folders:
   ```bash
-  rm -rf src/app/ src/app.ts src/app.native.ts tests/
+  rm -rf src/app/ src/app.ts src/app.native.ts tests/ templates/button templates/command templates/cron templates/listener templates/mysql2 template/pg template/slash templates/sqlite3 templates/table
   ```
 
 ---
 
-### 6. Configure the engine
+### 7. Configure the engine
 
 - Define your **engine** (package manager and runtime) using the CLI:
 
@@ -126,7 +134,7 @@ Migrating ensures access to these advancements while maintaining compatibility w
 
 ---
 
-### 7. Adapt Your Custom Files
+### 8. Adapt Your Custom Files
 
 - Convert all custom files in your project to account for the [breaking changes](#breaking-changes) listed earlier.
 - Pay special attention to updated import paths, the removal of file extensions, and required prefixes for Node.js built-ins.
