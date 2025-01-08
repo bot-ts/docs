@@ -84,7 +84,7 @@ Migrating ensures access to these advancements while maintaining compatibility w
   mkdir scripts
   ```
 - Download the [framework updater](https://raw.githubusercontent.com/bot-ts/framework/refs/heads/master/scripts/update-framework.js) into the `scripts/` folder as `update-framework.js`.
-- Download the [compatibility file](https://raw.githubusercontent.com/bot-ts/framework/refs/heads/master/scripts/update-framework.js) and place it **at the root** of your bot as `compatibility.json`.
+- Download the [compatibility file](https://raw.githubusercontent.com/bot-ts/framework/refs/heads/master/compatibility.json) and place it **at the root** of your bot as `compatibility.json`.
 
 ---
 
