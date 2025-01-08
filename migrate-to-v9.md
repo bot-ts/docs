@@ -115,7 +115,7 @@ Migrating ensures access to these advancements while maintaining compatibility w
 
 - Delete the following files and folders:
   ```bash
-  rm -rf src/app/ src/app.ts src/app.native.ts tests/ templates/button templates/command templates/cron templates/listener templates/mysql2 template/pg template/slash templates/sqlite3 templates/table
+  rm -rf src/app/ src/app.ts src/app.native.ts tests/ templates/button templates/command templates/cron templates/listener templates/mysql2 templates/pg templates/slash templates/sqlite3 templates/table
   ```
 
 ---
