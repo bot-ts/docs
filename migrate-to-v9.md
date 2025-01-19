@@ -55,6 +55,13 @@ Migrating ensures access to these advancements while maintaining compatibility w
    + import { Foo } from "./foo";
    ```
 
+5. **Moved ResponseCache**  
+   The `ResponseCache` class has been removed from the core files:
+   ```diff
+   - import { ResponseCache } from "#database";
+   + import { ResponseCache } from "@ghom/orm";
+   ```
+
 ---
 
 ## 🛠 Migration Steps
